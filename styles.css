@@ -748,6 +748,200 @@
     }
 
     /* ══════════════════════════════
+       FRAGRANCE MODAL
+    ══════════════════════════════ */
+    .frag-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,.74);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        z-index: 200;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .32s ease;
+    }
+    .frag-overlay.open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .frag-modal {
+        background: #0d130d;
+        border: 1px solid var(--border-hover);
+        border-radius: 24px;
+        width: 100%;
+        max-width: 840px;
+        max-height: 88vh;
+        overflow-y: auto;
+        position: relative;
+        padding: 46px;
+        transform: translateY(32px) scale(.97);
+        transition: transform .38s cubic-bezier(.4,0,.2,1);
+        box-shadow:
+            0 30px 90px rgba(0,0,0,.82),
+            0 0 0 1px rgba(0,230,118,.06),
+            0 0 80px rgba(0,230,118,.04);
+        scrollbar-width: thin;
+        scrollbar-color: var(--green-dim) var(--bg);
+    }
+    .frag-modal::-webkit-scrollbar       { width: 5px; }
+    .frag-modal::-webkit-scrollbar-track { background: transparent; }
+    .frag-modal::-webkit-scrollbar-thumb { background: var(--green-dim); border-radius: 3px; }
+    .frag-overlay.open .frag-modal {
+        transform: translateY(0) scale(1);
+    }
+    .frag-close {
+        position: absolute;
+        top: 18px; right: 20px;
+        width: 32px; height: 32px;
+        border-radius: 50%;
+        background: rgba(255,255,255,.05);
+        border: 1px solid rgba(255,255,255,.1);
+        color: var(--muted);
+        font-size: 18px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all var(--ease);
+        line-height: 1;
+    }
+    .frag-close:hover {
+        background: rgba(0,230,118,.12);
+        border-color: var(--green);
+        color: var(--green);
+    }
+    .frag-body {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 38px;
+        align-items: start;
+    }
+    .frag-img-col { position: sticky; top: 0; padding-top: 10px; }
+    .frag-img {
+        width: 100%;
+        height: 260px;
+        object-fit: contain;
+        padding: 16px;
+        filter: drop-shadow(0 14px 32px rgba(0,0,0,.62));
+        background: radial-gradient(ellipse at center, rgba(0,230,118,.04) 0%, transparent 70%);
+        border-radius: 16px;
+    }
+    .frag-modal-brand {
+        font-size: .68rem;
+        letter-spacing: .28em;
+        text-transform: uppercase;
+        color: var(--green);
+        opacity: .8;
+        margin-bottom: 8px;
+    }
+    .frag-modal-name {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2rem;
+        font-weight: 300;
+        letter-spacing: .02em;
+        line-height: 1.15;
+        margin-bottom: 20px;
+    }
+    .frag-sep {
+        width: 48px;
+        height: 1px;
+        background: linear-gradient(to right, var(--green), transparent);
+        margin-bottom: 26px;
+    }
+    .frag-section-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: .63rem;
+        letter-spacing: .3em;
+        text-transform: uppercase;
+        color: var(--green);
+        opacity: .72;
+        margin-bottom: 14px;
+    }
+    .frag-notes { margin-bottom: 30px; }
+    .frag-notes-grid {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 12px;
+    }
+    .note-col {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        background: rgba(255,255,255,.03);
+        border: 1px solid rgba(255,255,255,.06);
+        border-radius: 12px;
+        padding: 14px 12px;
+    }
+    .note-type {
+        font-size: .6rem;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        color: var(--green);
+        opacity: .65;
+    }
+    .note-vals {
+        font-size: .8rem;
+        color: #c8c8c8;
+        line-height: 1.55;
+        font-weight: 300;
+    }
+    .when-grid {
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        gap: 10px;
+    }
+    .when-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+    }
+    .when-icon { font-size: 1.25rem; line-height: 1; }
+    .when-label {
+        font-size: .58rem;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        text-align: center;
+    }
+    .when-bar-wrap {
+        width: 100%;
+        height: 4px;
+        background: rgba(255,255,255,.08);
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    .when-bar {
+        height: 100%;
+        border-radius: 4px;
+        width: 0;
+        transition: width .85s cubic-bezier(.4,0,.2,1) .15s;
+    }
+    .when-val {
+        font-size: .62rem;
+        color: var(--green);
+        font-weight: 500;
+        letter-spacing: .04em;
+    }
+    @media (max-width: 680px) {
+        .frag-modal      { padding: 28px 20px; max-height: 94vh; }
+        .frag-body       { grid-template-columns: 1fr; gap: 22px; }
+        .frag-img        { height: 200px; }
+        .when-grid       { grid-template-columns: repeat(3,1fr); gap: 14px; }
+        .frag-modal-name { font-size: 1.5rem; }
+    }
+    @media (max-width: 480px) {
+        .frag-notes-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ══════════════════════════════
        KEYFRAMES
     ══════════════════════════════ */
     @keyframes fadeUp {

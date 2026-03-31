@@ -408,6 +408,50 @@
     <p class="footer-copy">&copy; 2026 &nbsp;ChifriScents &nbsp;·&nbsp; Todos los derechos reservados</p>
   </footer>
 
+  <!-- ══ Fragrance Modal ══ -->
+  <div class="frag-overlay" id="fragOverlay" role="dialog" aria-modal="true" aria-labelledby="fragModalName">
+    <div class="frag-modal" id="fragModal">
+      <button class="frag-close" id="fragClose" aria-label="Cerrar">&times;</button>
+      <div class="frag-body">
+        <div class="frag-img-col">
+          <img src="" alt="" id="fragModalImg" class="frag-img">
+        </div>
+        <div class="frag-info-col">
+          <p class="frag-modal-brand" id="fragModalBrand"></p>
+          <h2 class="frag-modal-name" id="fragModalName"></h2>
+          <div class="frag-sep"></div>
+          <div class="frag-notes">
+            <p class="frag-section-title">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22c-4.418 0-8-3.582-8-8 0-4 3.5-10 8-12 4.5 2 8 8 8 12 0 4.418-3.582 8-8 8z"/></svg>
+              Notas de Fragancia
+            </p>
+            <div class="frag-notes-grid">
+              <div class="note-col">
+                <span class="note-type">Salida</span>
+                <span class="note-vals" id="fragTop"></span>
+              </div>
+              <div class="note-col">
+                <span class="note-type">Corazón</span>
+                <span class="note-vals" id="fragHeart"></span>
+              </div>
+              <div class="note-col">
+                <span class="note-type">Fondo</span>
+                <span class="note-vals" id="fragBase"></span>
+              </div>
+            </div>
+          </div>
+          <div class="frag-when">
+            <p class="frag-section-title">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Cuándo Usarlo
+            </p>
+            <div class="when-grid" id="fragWhenGrid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Back to top -->
   <!-- WhatsApp float -->
   <a class="wa-float" href="https://wa.me/50687086834?text=Hola!%20Quisiera%20hacer%20una%20consulta%20sobre%20sus%20perfumes." target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
@@ -613,6 +657,104 @@
       card.querySelector('.card-info').appendChild(btn);
       const arrow = card.querySelector('.card-arrow');
       if (arrow) arrow.remove();
+    });
+
+    /* ═══════════ FRAGRANCE MODAL ═══════════ */
+    const PERFUME_DATA = {
+      'Island Bliss':             { notes:{ top:'Mango, Coco, Brisa Marina',             heart:'Jazmín, Frangipani, Loto',              base:'Almizcle, Sándalo, Ámbar'            }, seasons:{invierno:10,primavera:82,verano:96,otono:42}, times:{dia:90,noche:28} },
+      'Odyssey Mandarin Sky':     { notes:{ top:'Mandarina, Bergamota, Lima',             heart:'Neroli, Menta, Cardamomo',              base:'Cedro, Almizcle, Vetiver'            }, seasons:{invierno:22,primavera:88,verano:92,otono:52}, times:{dia:88,noche:35} },
+      'Club de Nuit Intense Man': { notes:{ top:'Piña, Bergamota, Manzana',              heart:'Abedul Ruso, Jazmín, Rosa',             base:'Almizcle, Ámbar, Patchouli'          }, seasons:{invierno:72,primavera:58,verano:40,otono:78}, times:{dia:52,noche:93} },
+      'Club de Nuit Femme':       { notes:{ top:'Naranja, Bergamota, Piña',              heart:'Rosa, Jazmín, Fresia',                  base:'Vainilla, Almizcle, Sándalo'         }, seasons:{invierno:42,primavera:88,verano:62,otono:72}, times:{dia:68,noche:82} },
+      'Club de Nuit Urban Elixir':{ notes:{ top:'Bergamota, Lima, Piña Oscura',          heart:'Rosa, Jazmín, Patchouli',               base:'Oud, Ámbar Oscuro, Almizcle'         }, seasons:{invierno:82,primavera:40,verano:18,otono:76}, times:{dia:28,noche:96} },
+      'Mandarin Sky Elixir':      { notes:{ top:'Mandarina, Bergamota, Limón',           heart:'Lavanda, Geranio, Iris',                base:'Cedro, Vetiver, Almizcle'            }, seasons:{invierno:38,primavera:82,verano:88,otono:62}, times:{dia:82,noche:58} },
+      'Odyssey Homme':            { notes:{ top:'Bergamota, Cilantro, Lavanda',          heart:'Rosa, Geranio, Manzanilla',             base:'Cedro, Vetiver, Musgo de Roble'      }, seasons:{invierno:32,primavera:88,verano:78,otono:72}, times:{dia:86,noche:52} },
+      'Odyssey Artisto':          { notes:{ top:'Pimienta Negra, Bergamota, Cilantro',   heart:'Lavanda, Geranio, Cedro',               base:'Vetiver, Patchouli, Ámbar'           }, seasons:{invierno:68,primavera:58,verano:32,otono:82}, times:{dia:48,noche:87} },
+      'Odyssey Bahamas':          { notes:{ top:'Piña, Coco, Lima',                     heart:'Frangipani, Jazmín, Algas Marinas',     base:'Almizcle, Sándalo, Madera Blanca'    }, seasons:{invierno:12,primavera:72,verano:97,otono:36}, times:{dia:92,noche:30} },
+      'Odyssey Spectra Blue':     { notes:{ top:'Bergamota, Menta Acuática, Pomelo',    heart:'Violeta, Lavanda, Iris',                base:'Almizcle Blanco, Cedro, Ambroxan'    }, seasons:{invierno:20,primavera:86,verano:92,otono:52}, times:{dia:88,noche:42} },
+      'Odyssey Spectra':          { notes:{ top:'Bergamota, Cardamomo, Lima',            heart:'Nuez Moscada, Jazmín, Geranio',         base:'Cedro, Vetiver, Benjuí'              }, seasons:{invierno:62,primavera:56,verano:36,otono:82}, times:{dia:46,noche:87} },
+      'Odyssey White':            { notes:{ top:'Bergamota, Limón, Menta',              heart:'Violeta, Rosa, Lavanda',                base:'Almizcle Blanco, Sándalo, Ámbar'     }, seasons:{invierno:46,primavera:92,verano:86,otono:62}, times:{dia:90,noche:52} },
+      'Hawas Cobra':              { notes:{ top:'Pimienta Negra, Bergamota, Jengibre',  heart:'Cuero, Cardamomo, Cedro',               base:'Oud, Ámbar, Almizcle'                }, seasons:{invierno:88,primavera:42,verano:18,otono:78}, times:{dia:24,noche:96} },
+      'Hawas Pink':               { notes:{ top:'Bergamota, Frutos Rojos, Pera',        heart:'Rosa, Jazmín, Fresia',                  base:'Almizcle, Vainilla, Cedro'           }, seasons:{invierno:30,primavera:92,verano:72,otono:56}, times:{dia:86,noche:62} },
+      'Hawas Atlantis':           { notes:{ top:'Menta, Bergamota, Agua de Mar',         heart:'Lavanda Acuática, Geranio, Manzanilla', base:'Ambroxan, Almizcle, Madera Blanca'   }, seasons:{invierno:16,primavera:76,verano:96,otono:42}, times:{dia:92,noche:36} },
+      'Hawas Black':              { notes:{ top:'Pimienta Negra, Cardamomo, Jengibre',  heart:'Orquídea, Cuero, Patchouli',            base:'Oud, Ámbar Negro, Almizcle Oscuro'   }, seasons:{invierno:92,primavera:28,verano:14,otono:72}, times:{dia:18,noche:96} },
+      'Hawas Diva':               { notes:{ top:'Bergamota, Rosa, Frutos Rojos',        heart:'Iris, Geranio, Jazmín',                 base:'Sándalo, Patchouli, Almizcle'        }, seasons:{invierno:52,primavera:86,verano:58,otono:82}, times:{dia:56,noche:86} },
+      'Hawas Éclat':              { notes:{ top:'Limón, Bergamota, Pomelo',             heart:'Lavanda, Menta, Geranio',               base:'Vetiver, Sándalo, Almizcle'          }, seasons:{invierno:26,primavera:92,verano:86,otono:56}, times:{dia:92,noche:42} },
+      'Hawas Elixir':             { notes:{ top:'Azafrán, Bergamota, Cardamomo',         heart:'Oud, Rosa, Geranio',                    base:'Ámbar, Almizcle, Vainilla'           }, seasons:{invierno:92,primavera:36,verano:14,otono:78}, times:{dia:24,noche:96} },
+      'Hawas Fire':               { notes:{ top:'Cardamomo, Pimienta Rosa, Bergamota',  heart:'Jazmín, Orquídea, Nuez Moscada',        base:'Oud Ahumado, Ámbar, Almizcle Cálido' }, seasons:{invierno:86,primavera:36,verano:18,otono:82}, times:{dia:28,noche:96} },
+      'Hawas London':             { notes:{ top:'Bergamota, Pomelo, Pimienta',          heart:'Lavanda, Vetiver, Geranio',             base:'Cedro, Cuero, Almizcle'              }, seasons:{invierno:58,primavera:82,verano:52,otono:76}, times:{dia:66,noche:82} },
+      'Hawas Tropical':           { notes:{ top:'Maracuyá, Mango, Bergamota',           heart:'Coco, Frangipani, Jazmín',              base:'Almizcle, Madera Blanca, Vainilla'   }, seasons:{invierno:14,primavera:66,verano:97,otono:32}, times:{dia:86,noche:36} },
+      'Malibu':                   { notes:{ top:'Brisa Marina, Lima, Pomelo',           heart:'Coco, Algas, Flor de Árbol de Té',     base:'Almizcle Blanco, Sándalo, Ámbar'     }, seasons:{invierno:10,primavera:62,verano:98,otono:26}, times:{dia:94,noche:28} }
+    };
+
+    const WHEN_META = [
+      {key:'invierno', label:'Invierno', icon:'❄️', color:'#6ab0f5', type:'seasons'},
+      {key:'primavera',label:'Primavera',icon:'🌸', color:'#69f0ae', type:'seasons'},
+      {key:'verano',   label:'Verano',   icon:'☀️', color:'#ff6e40', type:'seasons'},
+      {key:'otono',    label:'Otoño',    icon:'🍂', color:'#ffab40', type:'seasons'},
+      {key:'dia',      label:'Día',      icon:'🔆', color:'#ffd740', type:'times'},
+      {key:'noche',    label:'Noche',    icon:'🌙', color:'#7986cb', type:'times'},
+    ];
+
+    const fragOverlay    = document.getElementById('fragOverlay');
+    const fragModal      = document.getElementById('fragModal');
+    const fragModalImg   = document.getElementById('fragModalImg');
+    const fragModalBrand = document.getElementById('fragModalBrand');
+    const fragModalName  = document.getElementById('fragModalName');
+    const fragTopEl      = document.getElementById('fragTop');
+    const fragHeartEl    = document.getElementById('fragHeart');
+    const fragBaseEl     = document.getElementById('fragBase');
+    const fragWhenGrid   = document.getElementById('fragWhenGrid');
+
+    function openFragModal(card) {
+      const name   = card.querySelector('.card-name').textContent.trim();
+      const brand  = card.querySelector('.card-brand').textContent.trim();
+      const imgSrc = card.querySelector('.card-img-wrap img').src;
+      const data   = PERFUME_DATA[name];
+
+      fragModalImg.src           = imgSrc;
+      fragModalImg.alt           = name;
+      fragModalBrand.textContent = brand;
+      fragModalName.textContent  = name;
+
+      if (data) {
+        fragTopEl.textContent   = data.notes.top;
+        fragHeartEl.textContent = data.notes.heart;
+        fragBaseEl.textContent  = data.notes.base;
+        fragWhenGrid.innerHTML  = WHEN_META.map(m => {
+          const val = data[m.type][m.key];
+          return `<div class="when-item">
+            <span class="when-icon">${m.icon}</span>
+            <span class="when-label">${m.label}</span>
+            <div class="when-bar-wrap"><div class="when-bar" data-w="${val}" style="background:${m.color}"></div></div>
+            <span class="when-val">${val}</span>
+          </div>`;
+        }).join('');
+      } else {
+        fragTopEl.textContent = fragHeartEl.textContent = fragBaseEl.textContent = 'Información no disponible';
+        fragWhenGrid.innerHTML = '';
+      }
+
+      fragOverlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      fragModal.scrollTop = 0;
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        fragWhenGrid.querySelectorAll('.when-bar').forEach(b => { b.style.width = b.dataset.w + '%'; });
+      }));
+    }
+
+    function closeFragModal() {
+      fragOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+      setTimeout(() => {
+        fragWhenGrid.querySelectorAll('.when-bar').forEach(b => { b.style.width = '0'; });
+      }, 360);
+    }
+
+    document.getElementById('fragClose').addEventListener('click', closeFragModal);
+    fragOverlay.addEventListener('click', e => { if (e.target === fragOverlay) closeFragModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && fragOverlay.classList.contains('open')) closeFragModal(); });
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.addEventListener('click', e => { if (!e.target.closest('.card-wa')) openFragModal(card); });
     });
   </script>
 
