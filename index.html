@@ -18,7 +18,7 @@
   <!-- Floating particles -->
   <canvas id="particles-canvas"></canvas>
 
-  <!-- ══ Header ══ -->
+  <!--  Header  -->
   <header id="hdr">
     <a href="#" class="logo">Chifri<span>·</span>Scents</a>
     <nav>
@@ -28,7 +28,7 @@
     </nav>
   </header>
 
-  <!-- ══ Hero ══ -->
+  <!-- Hero  -->
   <section class="hero" id="inicio">
     <p class="hero-eyebrow">Experiencias exclusivas &nbsp;·&nbsp; 2026</p>
     <h1 class="hero-title">
@@ -46,7 +46,7 @@
     <div class="hero-line"></div>
   </section>
 
-  <!-- ══ Marquee band ══ -->
+  <!-- Marquee band -->
   <div class="marquee-band">
     <div class="marquee-track">
       <!-- copy 1 -->
@@ -86,7 +86,7 @@
     </div>
   </div>
 
-  <!-- ══ Collection ══ -->
+  <!-- Collection -->
   <section class="section" id="coleccion">
     <div class="section-header">
       <span class="section-tag">Nuestras Fragancias</span>
@@ -113,7 +113,7 @@
 
     <div class="products-grid" id="grid">
 
-      <!-- ─── ARMAF ─── -->
+      <!-- Armaf -->
 
       <div class="product-card" data-brand="armaf">
         <div class="card-shimmer"></div>
@@ -259,7 +259,7 @@
         </div>
       </div>
 
-      <!-- ─── RASASI ─── -->
+      <!-- Rasasi -->
 
       <div class="product-card" data-brand="rasasi">
         <div class="card-shimmer"></div>
@@ -400,7 +400,7 @@
 
   </section>
 
-  <!-- ══ Footer ══ -->
+  <!-- Footer -->
   <footer>
     <div class="footer-logo">Chifri<span>·</span>Scents</div>
     <p class="footer-sub">Fragancias para momentos únicos</p>
@@ -408,7 +408,7 @@
     <p class="footer-copy">&copy; 2026 &nbsp;ChifriScents &nbsp;·&nbsp; Todos los derechos reservados</p>
   </footer>
 
-  <!-- ══ Fragrance Modal ══ -->
+  <!-- Fragrance Modal -->
   <div class="frag-overlay" id="fragOverlay" role="dialog" aria-modal="true" aria-labelledby="fragModalName">
     <div class="frag-modal" id="fragModal">
       <button class="frag-close" id="fragClose" aria-label="Cerrar">&times;</button>
@@ -464,7 +464,7 @@
   <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver arriba">&#8593;</button>
 
   <script>
-    /* ═══════════ PARTICLES ═══════════ */
+    /*  PARTICLES  */
     (function () {
       const cvs = document.getElementById('particles-canvas');
       const ctx = cvs.getContext('2d');
@@ -506,7 +506,7 @@
       tick();
     })();
 
-    /* ═══════════ HEADER SCROLL ═══════════ */
+    /*  HEADER SCROLL  */
     const hdr  = document.getElementById('hdr');
     const bTop = document.getElementById('backTop');
     addEventListener('scroll', () => {
@@ -514,7 +514,7 @@
       bTop.classList.toggle('show', scrollY > 450);
     });
 
-    /* ═══════════ FILTER + SEARCH ═══════════ */
+    /*  FILTER + SEARCH  */
     const tabs        = document.querySelectorAll('.tab-btn');
     const cards       = document.querySelectorAll('.product-card');
     const searchInput = document.getElementById('searchInput');
@@ -564,7 +564,7 @@
       applyAll();
     });
 
-    /* ═══════════ SCROLL REVEAL ═══════════ */
+    /*  SCROLL REVEAL  */
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e, idx) => {
         if (e.isIntersecting) {
@@ -577,7 +577,7 @@
       });
     }, { threshold: 0.08 });
 
-    /* ═══════════ PAGINATION ═══════════ */
+    /*  PAGINATION  */
     const ITEMS_PER_PAGE = 10;
     let currentPage = 1;
 
@@ -641,7 +641,7 @@
 
     renderPage();
 
-    /* ═══════════ WHATSAPP CARD BUTTONS ═══════════ */
+    /*  WHATSAPP CARD BUTTONS  */
     const WA_NUM = '50687086834';
     const WA_SVG = `<svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.486 2 2 6.486 2 12c0 1.89.528 3.653 1.438 5.162L2.046 22l4.95-1.374A9.935 9.935 0 0012 22c5.514 0 10-4.486 10-10S17.514 2 12 2zm0 18a7.952 7.952 0 01-4.054-1.112l-.291-.173-3.018.839.843-3.019-.19-.308A7.954 7.954 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>`;
     document.querySelectorAll('.product-card').forEach(card => {
@@ -659,7 +659,7 @@
       if (arrow) arrow.remove();
     });
 
-    /* ═══════════ FRAGRANCE MODAL ═══════════ */
+    /*  FRAGRANCE MODAL  */
     const PERFUME_DATA = {
       'Island Bliss':             { notes:{ top:'Mango, Coco, Brisa Marina',             heart:'Jazmín, Frangipani, Loto',              base:'Almizcle, Sándalo, Ámbar'            }, seasons:{invierno:10,primavera:82,verano:96,otono:42}, times:{dia:90,noche:28} },
       'Odyssey Mandarin Sky':     { notes:{ top:'Mandarina, Bergamota, Lima',             heart:'Neroli, Menta, Cardamomo',              base:'Cedro, Almizcle, Vetiver'            }, seasons:{invierno:22,primavera:88,verano:92,otono:52}, times:{dia:88,noche:35} },
