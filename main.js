@@ -49,12 +49,14 @@ addEventListener('scroll', () => {
 });
 
 /* ── FILTER + SEARCH ───────────────────────────────────── */
-const tabs        = document.querySelectorAll('.tab-btn');
+const tabs        = document.querySelectorAll('.tab-btn:not(.gender-btn)');
+const genderBtns  = document.querySelectorAll('.gender-btn');
 const cards       = document.querySelectorAll('.product-card');
 const searchInput = document.getElementById('searchInput');
 const searchClear = document.getElementById('searchClear');
 const noResults   = document.getElementById('noResults');
 let   activeFilter = 'all';
+let   activeGender = 'all';
 
 function applyAll() {
     const q = searchInput.value.trim().toLowerCase();
@@ -65,9 +67,11 @@ function applyAll() {
     cards.forEach(c => {
     const name   = c.querySelector('.card-name').textContent.toLowerCase();
     const brand  = c.dataset.brand;
+    const gender = c.dataset.gender;
     const matchB = activeFilter === 'all' || brand === activeFilter;
+    const matchG = activeGender === 'all' || gender === activeGender;
     const matchQ = !q || name.includes(q);
-    if (matchB && matchQ) {
+    if (matchB && matchG && matchQ) {
         c.classList.remove('hidden');
         visible++;
     } else {
@@ -85,6 +89,15 @@ tabs.forEach(t => {
     tabs.forEach(x => x.classList.remove('active'));
     t.classList.add('active');
     activeFilter = t.dataset.filter;
+    applyAll();
+    });
+});
+
+genderBtns.forEach(b => {
+    b.addEventListener('click', () => {
+    genderBtns.forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    activeGender = b.dataset.gender;
     applyAll();
     });
 });
