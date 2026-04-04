@@ -3,7 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ChifriScents · Colección Exclusiva</title>
+  <title>ChifriScents · Colección Exclusiva de Perfumes</title>
+
+  <!-- Open Graph / WhatsApp / Facebook -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="ChifriScents">
+  <meta property="og:url"         content="https://chifriscents.vercel.app">
+  <meta property="og:title"       content="ChifriScents · Colección Exclusiva de Perfumes">
+  <meta property="og:description" content="Descubre nuestra selección exclusiva de perfumes de lujo. Armaf, Creed, Dior, Rasasi, Lataffa, Afnan y más. Pedí por WhatsApp.">
+  <meta property="og:image"       content="https://chifriscents.vercel.app/Perfumes/Armaf/club the nuit intense man.png">
+  <meta property="og:image:width"  content="500">
+  <meta property="og:image:height" content="500">
+  <meta property="og:locale"      content="es_CR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="ChifriScents · Colección Exclusiva de Perfumes">
+  <meta name="twitter:description" content="Descubre nuestra selección exclusiva de perfumes de lujo. Pedí por WhatsApp.">
+  <meta name="twitter:image"       content="https://chifriscents.vercel.app/Perfumes/Armaf/club the nuit intense man.png">
+
+  <!-- SEO general -->
+  <meta name="description" content="Colección exclusiva de perfumes de lujo: Armaf, Creed, Dior, Rasasi, Lataffa y Afnan. Encontrá tu fragancia ideal y pedí por WhatsApp.">
+  <meta name="keywords"    content="perfumes, fragancias, lujo, Armaf, Creed, Dior, Rasasi, Lataffa, Afnan, Club de Nuit, Sauvage, Aventus">
+  <link rel="canonical"    href="https://chifriscents.vercel.app">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -96,7 +119,11 @@
 
     <div class="filter-tabs" id="marcas">
       <button class="tab-btn active" data-filter="all">Todas</button>
+      <button class="tab-btn" data-filter="afnan">Afnan</button>
       <button class="tab-btn" data-filter="armaf">Armaf</button>
+      <button class="tab-btn" data-filter="creed">Creed</button>
+      <button class="tab-btn" data-filter="dior">Dior</button>
+      <button class="tab-btn" data-filter="lataffa">Lataffa</button>
       <button class="tab-btn" data-filter="rasasi">Rasasi</button>
     </div>
 
@@ -119,289 +146,7 @@
 
     <p class="no-results" id="noResults">No se encontraron fragancias.</p>
 
-    <div class="products-grid" id="grid">
-
-      <!-- Armaf -->
-
-      <div class="product-card" data-brand="armaf" data-gender="unisex">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/Armaf%20island%20bliss.png" alt="Island Bliss" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Island Bliss</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="armaf" data-gender="unisex">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/Armaf%20odyssey%20mandarin%20sky.png" alt="Odyssey Mandarin Sky" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Odyssey Mandarin Sky</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="armaf" data-gender="hombre">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/club%20the%20nuit%20intense%20man.png" alt="Club de Nuit Intense Man" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Club de Nuit Intense Man</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="armaf" data-gender="mujer">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/CLUB-DE-NUIT%20mujer.png" alt="Club de Nuit Femme" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Club de Nuit Femme</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="armaf" data-gender="unisex">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/Club-de-Nuit-Urban-Elixir.png" alt="Club de Nuit Urban Elixir" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Club de Nuit Urban Elixir</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="armaf" data-gender="hombre">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/mandarinn%20sky%20elixir.png" alt="Mandarin Sky Elixir" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Mandarin Sky Elixir</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="armaf" data-gender="hombre">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/oddysey%20homme%20.png" alt="Odyssey Homme" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Odyssey Homme</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="armaf" data-gender="hombre">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/odyssey-artisto.png" alt="Odyssey Artisto" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Odyssey Artisto</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="armaf" data-gender="unisex">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/ODYSSEY-BA-HA-MAS-UNSIEX-100ML-EDP-ARMAF.jpg" alt="Odyssey Bahamas" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Odyssey Bahamas</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="armaf" data-gender="unisex">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/ODYSSEY-SPECTRA-UNISEX-100ML-EDP-ARMAF%20Blue%20edition.png" alt="Odyssey Spectra Blue" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Odyssey Spectra Blue</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="armaf" data-gender="unisex">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/ODYSSEY-SPECTRA-UNISEX-100ML-EDP-ARMAF.png" alt="Odyssey Spectra" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Odyssey Spectra</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="armaf" data-gender="unisex">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/ODYSSEY-WHITE.jpg" alt="Odyssey White" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Odyssey White</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <!-- Rasasi -->
-
-      <div class="product-card" data-brand="rasasi" data-gender="hombre">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Rasasi/hawas%20cobra.png" alt="Hawas Cobra" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Rasasi</p>
-          <h3 class="card-name">Hawas Cobra</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="rasasi" data-gender="mujer">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Rasasi/hawas%20pink.png" alt="Hawas Pink" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Rasasi</p>
-          <h3 class="card-name">Hawas Pink</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="rasasi" data-gender="hombre">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Rasasi/Hawas-Atlantis.webp" alt="Hawas Atlantis" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Rasasi</p>
-          <h3 class="card-name">Hawas Atlantis</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="rasasi" data-gender="hombre">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Rasasi/Hawas-Black.png" alt="Hawas Black" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Rasasi</p>
-          <h3 class="card-name">Hawas Black</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="rasasi" data-gender="mujer">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Rasasi/Hawas-Diva.png" alt="Hawas Diva" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Rasasi</p>
-          <h3 class="card-name">Hawas Diva</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="rasasi" data-gender="hombre">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Rasasi/HAWAS-ECLAT.png" alt="Hawas Éclat" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Rasasi</p>
-          <h3 class="card-name">Hawas &Eacute;clat</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="rasasi" data-gender="hombre">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Rasasi/hawas-elixir.png" alt="Hawas Elixir" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Rasasi</p>
-          <h3 class="card-name">Hawas Elixir</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="rasasi" data-gender="hombre">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Rasasi/hawas-fire.png" alt="Hawas Fire" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Rasasi</p>
-          <h3 class="card-name">Hawas Fire</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="rasasi" data-gender="hombre">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Rasasi/HAWAS-LONDON.png" alt="Hawas London" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Rasasi</p>
-          <h3 class="card-name">Hawas London</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="rasasi" data-gender="unisex">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Rasasi/hawas-tropical.jpg" alt="Hawas Tropical" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Rasasi</p>
-          <h3 class="card-name">Hawas Tropical</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="rasasi" data-gender="unisex">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Rasasi/malibu.jpg" alt="Malibu" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Rasasi</p>
-          <h3 class="card-name">Malibu</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-    </div>
+    <div class="products-grid" id="grid"></div>
 
     <!-- Pagination -->
     <div class="pagination" id="pagination"></div>

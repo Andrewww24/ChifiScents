@@ -1,25 +1,2775 @@
 {
-    "Island Bliss":              { "notes": { "top": "Mango, Coco, Brisa Marina",            "heart": "Jazmín, Frangipani, Loto",              "base": "Almizcle, Sándalo, Ámbar"            }, "seasons": { "invierno": 10, "primavera": 82, "verano": 96, "otono": 42 }, "times": { "dia": 90, "noche": 28 } },
-    "Odyssey Mandarin Sky":      { "notes": { "top": "Mandarina, Bergamota, Lima",            "heart": "Neroli, Menta, Cardamomo",              "base": "Cedro, Almizcle, Vetiver"            }, "seasons": { "invierno": 22, "primavera": 88, "verano": 92, "otono": 52 }, "times": { "dia": 88, "noche": 35 } },
-    "Club de Nuit Intense Man":  { "notes": { "top": "Piña, Bergamota, Manzana",             "heart": "Abedul Ruso, Jazmín, Rosa",             "base": "Almizcle, Ámbar, Patchouli"          }, "seasons": { "invierno": 72, "primavera": 58, "verano": 40, "otono": 78 }, "times": { "dia": 52, "noche": 93 } },
-    "Club de Nuit Femme":        { "notes": { "top": "Naranja, Bergamota, Piña",             "heart": "Rosa, Jazmín, Fresia",                  "base": "Vainilla, Almizcle, Sándalo"         }, "seasons": { "invierno": 42, "primavera": 88, "verano": 62, "otono": 72 }, "times": { "dia": 68, "noche": 82 } },
-    "Club de Nuit Urban Elixir": { "notes": { "top": "Bergamota, Lima, Piña Oscura",         "heart": "Rosa, Jazmín, Patchouli",               "base": "Oud, Ámbar Oscuro, Almizcle"         }, "seasons": { "invierno": 82, "primavera": 40, "verano": 18, "otono": 76 }, "times": { "dia": 28, "noche": 96 } },
-    "Mandarin Sky Elixir":       { "notes": { "top": "Mandarina, Bergamota, Limón",          "heart": "Lavanda, Geranio, Iris",                "base": "Cedro, Vetiver, Almizcle"            }, "seasons": { "invierno": 38, "primavera": 82, "verano": 88, "otono": 62 }, "times": { "dia": 82, "noche": 58 } },
-    "Odyssey Homme":             { "notes": { "top": "Bergamota, Cilantro, Lavanda",         "heart": "Rosa, Geranio, Manzanilla",             "base": "Cedro, Vetiver, Musgo de Roble"      }, "seasons": { "invierno": 32, "primavera": 88, "verano": 78, "otono": 72 }, "times": { "dia": 86, "noche": 52 } },
-    "Odyssey Artisto":           { "notes": { "top": "Pimienta Negra, Bergamota, Cilantro",  "heart": "Lavanda, Geranio, Cedro",               "base": "Vetiver, Patchouli, Ámbar"           }, "seasons": { "invierno": 68, "primavera": 58, "verano": 32, "otono": 82 }, "times": { "dia": 48, "noche": 87 } },
-    "Odyssey Bahamas":           { "notes": { "top": "Piña, Coco, Lima",                    "heart": "Frangipani, Jazmín, Algas Marinas",     "base": "Almizcle, Sándalo, Madera Blanca"    }, "seasons": { "invierno": 12, "primavera": 72, "verano": 97, "otono": 36 }, "times": { "dia": 92, "noche": 30 } },
-    "Odyssey Spectra Blue":      { "notes": { "top": "Bergamota, Menta Acuática, Pomelo",   "heart": "Violeta, Lavanda, Iris",                "base": "Almizcle Blanco, Cedro, Ambroxan"    }, "seasons": { "invierno": 20, "primavera": 86, "verano": 92, "otono": 52 }, "times": { "dia": 88, "noche": 42 } },
-    "Odyssey Spectra":           { "notes": { "top": "Bergamota, Cardamomo, Lima",           "heart": "Nuez Moscada, Jazmín, Geranio",         "base": "Cedro, Vetiver, Benjuí"              }, "seasons": { "invierno": 62, "primavera": 56, "verano": 36, "otono": 82 }, "times": { "dia": 46, "noche": 87 } },
-    "Odyssey White":             { "notes": { "top": "Bergamota, Limón, Menta",             "heart": "Violeta, Rosa, Lavanda",                "base": "Almizcle Blanco, Sándalo, Ámbar"     }, "seasons": { "invierno": 46, "primavera": 92, "verano": 86, "otono": 62 }, "times": { "dia": 90, "noche": 52 } },
-    "Hawas Cobra":               { "notes": { "top": "Pimienta Negra, Bergamota, Jengibre", "heart": "Cuero, Cardamomo, Cedro",               "base": "Oud, Ámbar, Almizcle"                }, "seasons": { "invierno": 88, "primavera": 42, "verano": 18, "otono": 78 }, "times": { "dia": 24, "noche": 96 } },
-    "Hawas Pink":                { "notes": { "top": "Bergamota, Frutos Rojos, Pera",       "heart": "Rosa, Jazmín, Fresia",                  "base": "Almizcle, Vainilla, Cedro"           }, "seasons": { "invierno": 30, "primavera": 92, "verano": 72, "otono": 56 }, "times": { "dia": 86, "noche": 62 } },
-    "Hawas Atlantis":            { "notes": { "top": "Menta, Bergamota, Agua de Mar",        "heart": "Lavanda Acuática, Geranio, Manzanilla", "base": "Ambroxan, Almizcle, Madera Blanca"   }, "seasons": { "invierno": 16, "primavera": 76, "verano": 96, "otono": 42 }, "times": { "dia": 92, "noche": 36 } },
-    "Hawas Black":               { "notes": { "top": "Pimienta Negra, Cardamomo, Jengibre", "heart": "Orquídea, Cuero, Patchouli",            "base": "Oud, Ámbar Negro, Almizcle Oscuro"   }, "seasons": { "invierno": 92, "primavera": 28, "verano": 14, "otono": 72 }, "times": { "dia": 18, "noche": 96 } },
-    "Hawas Diva":                { "notes": { "top": "Bergamota, Rosa, Frutos Rojos",       "heart": "Iris, Geranio, Jazmín",                 "base": "Sándalo, Patchouli, Almizcle"        }, "seasons": { "invierno": 52, "primavera": 86, "verano": 58, "otono": 82 }, "times": { "dia": 56, "noche": 86 } },
-    "Hawas Éclat":               { "notes": { "top": "Limón, Bergamota, Pomelo",            "heart": "Lavanda, Menta, Geranio",               "base": "Vetiver, Sándalo, Almizcle"          }, "seasons": { "invierno": 26, "primavera": 92, "verano": 86, "otono": 56 }, "times": { "dia": 92, "noche": 42 } },
-    "Hawas Elixir":              { "notes": { "top": "Azafrán, Bergamota, Cardamomo",        "heart": "Oud, Rosa, Geranio",                    "base": "Ámbar, Almizcle, Vainilla"           }, "seasons": { "invierno": 92, "primavera": 36, "verano": 14, "otono": 78 }, "times": { "dia": 24, "noche": 96 } },
-    "Hawas Fire":                { "notes": { "top": "Cardamomo, Pimienta Rosa, Bergamota", "heart": "Jazmín, Orquídea, Nuez Moscada",        "base": "Oud Ahumado, Ámbar, Almizcle Cálido" }, "seasons": { "invierno": 86, "primavera": 36, "verano": 18, "otono": 82 }, "times": { "dia": 28, "noche": 96 } },
-    "Hawas London":              { "notes": { "top": "Bergamota, Pomelo, Pimienta",         "heart": "Lavanda, Vetiver, Geranio",             "base": "Cedro, Cuero, Almizcle"              }, "seasons": { "invierno": 58, "primavera": 82, "verano": 52, "otono": 76 }, "times": { "dia": 66, "noche": 82 } },
-    "Hawas Tropical":            { "notes": { "top": "Maracuyá, Mango, Bergamota",          "heart": "Coco, Frangipani, Jazmín",              "base": "Almizcle, Madera Blanca, Vainilla"   }, "seasons": { "invierno": 14, "primavera": 66, "verano": 97, "otono": 32 }, "times": { "dia": 86, "noche": 36 } },
-    "Malibu":                    { "notes": { "top": "Brisa Marina, Lima, Pomelo",          "heart": "Coco, Algas, Flor de Árbol de Té",     "base": "Almizcle Blanco, Sándalo, Ámbar"     }, "seasons": { "invierno": 10, "primavera": 62, "verano": 98, "otono": 26 }, "times": { "dia": 94, "noche": 28 } }
+    "Island Bliss": {
+        "brand": "armaf",
+        "gender": "unisex",
+        "image": "Perfumes/Armaf/Armaf island bliss.png",
+        "notes": {
+            "top": "Mango, Coco, Brisa Marina",
+            "heart": "Jazmín, Frangipani, Loto",
+            "base": "Almizcle, Sándalo, Ámbar"
+        },
+        "seasons": {
+            "invierno": 10,
+            "primavera": 82,
+            "verano": 96,
+            "otono": 42
+        },
+        "times": {
+            "dia": 90,
+            "noche": 28
+        }
+    },
+    "Odyssey Mandarin Sky": {
+        "brand": "armaf",
+        "gender": "unisex",
+        "image": "Perfumes/Armaf/Armaf odyssey mandarin sky.png",
+        "notes": {
+            "top": "Mandarina, Bergamota, Lima",
+            "heart": "Neroli, Menta, Cardamomo",
+            "base": "Cedro, Almizcle, Vetiver"
+        },
+        "seasons": {
+            "invierno": 22,
+            "primavera": 88,
+            "verano": 92,
+            "otono": 52
+        },
+        "times": {
+            "dia": 88,
+            "noche": 35
+        }
+    },
+    "Club de Nuit Intense Man": {
+        "brand": "armaf",
+        "gender": "hombre",
+        "image": "Perfumes/Armaf/club the nuit intense man.png",
+        "notes": {
+            "top": "Piña, Bergamota, Manzana",
+            "heart": "Abedul Ruso, Jazmín, Rosa",
+            "base": "Almizcle, Ámbar, Patchouli"
+        },
+        "seasons": {
+            "invierno": 72,
+            "primavera": 58,
+            "verano": 40,
+            "otono": 78
+        },
+        "times": {
+            "dia": 52,
+            "noche": 93
+        },
+        "badge": "mas-vendido"
+    },
+    "Club de Nuit Femme": {
+        "brand": "armaf",
+        "gender": "mujer",
+        "image": "Perfumes/Armaf/CLUB-DE-NUIT mujer.png",
+        "notes": {
+            "top": "Naranja, Bergamota, Piña",
+            "heart": "Rosa, Jazmín, Fresia",
+            "base": "Vainilla, Almizcle, Sándalo"
+        },
+        "seasons": {
+            "invierno": 42,
+            "primavera": 88,
+            "verano": 62,
+            "otono": 72
+        },
+        "times": {
+            "dia": 68,
+            "noche": 82
+        }
+    },
+    "Club de Nuit Urban Elixir": {
+        "brand": "armaf",
+        "gender": "unisex",
+        "image": "Perfumes/Armaf/Club-de-Nuit-Urban-Elixir.png",
+        "notes": {
+            "top": "Bergamota, Lima, Piña Oscura",
+            "heart": "Rosa, Jazmín, Patchouli",
+            "base": "Oud, Ámbar Oscuro, Almizcle"
+        },
+        "seasons": {
+            "invierno": 82,
+            "primavera": 40,
+            "verano": 18,
+            "otono": 76
+        },
+        "times": {
+            "dia": 28,
+            "noche": 96
+        }
+    },
+    "Mandarin Sky Elixir": {
+        "brand": "armaf",
+        "gender": "hombre",
+        "image": "Perfumes/Armaf/mandarinn sky elixir.png",
+        "notes": {
+            "top": "Mandarina, Bergamota, Limón",
+            "heart": "Lavanda, Geranio, Iris",
+            "base": "Cedro, Vetiver, Almizcle"
+        },
+        "seasons": {
+            "invierno": 38,
+            "primavera": 82,
+            "verano": 88,
+            "otono": 62
+        },
+        "times": {
+            "dia": 82,
+            "noche": 58
+        }
+    },
+    "Odyssey Homme": {
+        "brand": "armaf",
+        "gender": "hombre",
+        "image": "Perfumes/Armaf/oddysey homme .png",
+        "notes": {
+            "top": "Bergamota, Cilantro, Lavanda",
+            "heart": "Rosa, Geranio, Manzanilla",
+            "base": "Cedro, Vetiver, Musgo de Roble"
+        },
+        "seasons": {
+            "invierno": 32,
+            "primavera": 88,
+            "verano": 78,
+            "otono": 72
+        },
+        "times": {
+            "dia": 86,
+            "noche": 52
+        }
+    },
+    "Odyssey Artisto": {
+        "brand": "armaf",
+        "gender": "hombre",
+        "image": "Perfumes/Armaf/odyssey-artisto.png",
+        "notes": {
+            "top": "Pimienta Negra, Bergamota, Cilantro",
+            "heart": "Lavanda, Geranio, Cedro",
+            "base": "Vetiver, Patchouli, Ámbar"
+        },
+        "seasons": {
+            "invierno": 68,
+            "primavera": 58,
+            "verano": 32,
+            "otono": 82
+        },
+        "times": {
+            "dia": 48,
+            "noche": 87
+        }
+    },
+    "Odyssey Bahamas": {
+        "brand": "armaf",
+        "gender": "unisex",
+        "image": "Perfumes/Armaf/ODYSSEY-BA-HA-MAS-UNSIEX-100ML-EDP-ARMAF.jpg",
+        "notes": {
+            "top": "Piña, Coco, Lima",
+            "heart": "Frangipani, Jazmín, Algas Marinas",
+            "base": "Almizcle, Sándalo, Madera Blanca"
+        },
+        "seasons": {
+            "invierno": 12,
+            "primavera": 72,
+            "verano": 97,
+            "otono": 36
+        },
+        "times": {
+            "dia": 92,
+            "noche": 30
+        }
+    },
+    "Odyssey Spectra Blue": {
+        "brand": "armaf",
+        "gender": "unisex",
+        "image": "Perfumes/Armaf/ODYSSEY-SPECTRA-UNISEX-100ML-EDP-ARMAF Blue edition.png",
+        "notes": {
+            "top": "Bergamota, Menta Acuática, Pomelo",
+            "heart": "Violeta, Lavanda, Iris",
+            "base": "Almizcle Blanco, Cedro, Ambroxan"
+        },
+        "seasons": {
+            "invierno": 20,
+            "primavera": 86,
+            "verano": 92,
+            "otono": 52
+        },
+        "times": {
+            "dia": 88,
+            "noche": 42
+        }
+    },
+    "Odyssey Spectra": {
+        "brand": "armaf",
+        "gender": "unisex",
+        "image": "Perfumes/Armaf/ODYSSEY-SPECTRA-UNISEX-100ML-EDP-ARMAF.png",
+        "notes": {
+            "top": "Bergamota, Cardamomo, Lima",
+            "heart": "Nuez Moscada, Jazmín, Geranio",
+            "base": "Cedro, Vetiver, Benjuí"
+        },
+        "seasons": {
+            "invierno": 62,
+            "primavera": 56,
+            "verano": 36,
+            "otono": 82
+        },
+        "times": {
+            "dia": 46,
+            "noche": 87
+        }
+    },
+    "Odyssey White": {
+        "brand": "armaf",
+        "gender": "unisex",
+        "image": "Perfumes/Armaf/ODYSSEY-WHITE.jpg",
+        "notes": {
+            "top": "Bergamota, Limón, Menta",
+            "heart": "Violeta, Rosa, Lavanda",
+            "base": "Almizcle Blanco, Sándalo, Ámbar"
+        },
+        "seasons": {
+            "invierno": 46,
+            "primavera": 92,
+            "verano": 86,
+            "otono": 62
+        },
+        "times": {
+            "dia": 90,
+            "noche": 52
+        }
+    },
+    "Hawas Cobra": {
+        "brand": "rasasi",
+        "gender": "hombre",
+        "image": "Perfumes/Rasasi/hawas cobra.png",
+        "notes": {
+            "top": "Pimienta Negra, Bergamota, Jengibre",
+            "heart": "Cuero, Cardamomo, Cedro",
+            "base": "Oud, Ámbar, Almizcle"
+        },
+        "seasons": {
+            "invierno": 88,
+            "primavera": 42,
+            "verano": 18,
+            "otono": 78
+        },
+        "times": {
+            "dia": 24,
+            "noche": 96
+        }
+    },
+    "Hawas Pink": {
+        "brand": "rasasi",
+        "gender": "mujer",
+        "image": "Perfumes/Rasasi/hawas pink.png",
+        "notes": {
+            "top": "Bergamota, Frutos Rojos, Pera",
+            "heart": "Rosa, Jazmín, Fresia",
+            "base": "Almizcle, Vainilla, Cedro"
+        },
+        "seasons": {
+            "invierno": 30,
+            "primavera": 92,
+            "verano": 72,
+            "otono": 56
+        },
+        "times": {
+            "dia": 86,
+            "noche": 62
+        }
+    },
+    "Hawas Atlantis": {
+        "brand": "rasasi",
+        "gender": "hombre",
+        "image": "Perfumes/Rasasi/Hawas-Atlantis.webp",
+        "notes": {
+            "top": "Menta, Bergamota, Agua de Mar",
+            "heart": "Lavanda Acuática, Geranio, Manzanilla",
+            "base": "Ambroxan, Almizcle, Madera Blanca"
+        },
+        "seasons": {
+            "invierno": 16,
+            "primavera": 76,
+            "verano": 96,
+            "otono": 42
+        },
+        "times": {
+            "dia": 92,
+            "noche": 36
+        }
+    },
+    "Hawas Black": {
+        "brand": "rasasi",
+        "gender": "hombre",
+        "image": "Perfumes/Rasasi/Hawas-Black.png",
+        "notes": {
+            "top": "Pimienta Negra, Cardamomo, Jengibre",
+            "heart": "Orquídea, Cuero, Patchouli",
+            "base": "Oud, Ámbar Negro, Almizcle Oscuro"
+        },
+        "seasons": {
+            "invierno": 92,
+            "primavera": 28,
+            "verano": 14,
+            "otono": 72
+        },
+        "times": {
+            "dia": 18,
+            "noche": 96
+        }
+    },
+    "Hawas Diva": {
+        "brand": "rasasi",
+        "gender": "mujer",
+        "image": "Perfumes/Rasasi/Hawas-Diva.png",
+        "notes": {
+            "top": "Bergamota, Rosa, Frutos Rojos",
+            "heart": "Iris, Geranio, Jazmín",
+            "base": "Sándalo, Patchouli, Almizcle"
+        },
+        "seasons": {
+            "invierno": 52,
+            "primavera": 86,
+            "verano": 58,
+            "otono": 82
+        },
+        "times": {
+            "dia": 56,
+            "noche": 86
+        }
+    },
+    "Hawas Elixir": {
+        "brand": "rasasi",
+        "gender": "hombre",
+        "image": "Perfumes/Rasasi/hawas-elixir.png",
+        "notes": {
+            "top": "Azafrán, Bergamota, Cardamomo",
+            "heart": "Oud, Rosa, Geranio",
+            "base": "Ámbar, Almizcle, Vainilla"
+        },
+        "seasons": {
+            "invierno": 92,
+            "primavera": 36,
+            "verano": 14,
+            "otono": 78
+        },
+        "times": {
+            "dia": 24,
+            "noche": 96
+        }
+    },
+    "Hawas Fire": {
+        "brand": "rasasi",
+        "gender": "hombre",
+        "image": "Perfumes/Rasasi/hawas-fire.png",
+        "notes": {
+            "top": "Cardamomo, Pimienta Rosa, Bergamota",
+            "heart": "Jazmín, Orquídea, Nuez Moscada",
+            "base": "Oud Ahumado, Ámbar, Almizcle Cálido"
+        },
+        "seasons": {
+            "invierno": 86,
+            "primavera": 36,
+            "verano": 18,
+            "otono": 82
+        },
+        "times": {
+            "dia": 28,
+            "noche": 96
+        }
+    },
+    "Hawas London": {
+        "brand": "rasasi",
+        "gender": "hombre",
+        "image": "Perfumes/Rasasi/HAWAS-LONDON.png",
+        "notes": {
+            "top": "Bergamota, Pomelo, Pimienta",
+            "heart": "Lavanda, Vetiver, Geranio",
+            "base": "Cedro, Cuero, Almizcle"
+        },
+        "seasons": {
+            "invierno": 58,
+            "primavera": 82,
+            "verano": 52,
+            "otono": 76
+        },
+        "times": {
+            "dia": 66,
+            "noche": 82
+        }
+    },
+    "Hawas Tropical": {
+        "brand": "rasasi",
+        "gender": "unisex",
+        "image": "Perfumes/Rasasi/hawas-tropical.jpg",
+        "notes": {
+            "top": "Maracuyá, Mango, Bergamota",
+            "heart": "Coco, Frangipani, Jazmín",
+            "base": "Almizcle, Madera Blanca, Vainilla"
+        },
+        "seasons": {
+            "invierno": 14,
+            "primavera": 66,
+            "verano": 97,
+            "otono": 32
+        },
+        "times": {
+            "dia": 86,
+            "noche": 36
+        }
+    },
+    "Malibu": {
+        "brand": "rasasi",
+        "gender": "unisex",
+        "image": "Perfumes/Rasasi/malibu.jpg",
+        "notes": {
+            "top": "Brisa Marina, Lima, Pomelo",
+            "heart": "Coco, Algas, Flor de Árbol de Té",
+            "base": "Almizcle Blanco, Sándalo, Ámbar"
+        },
+        "seasons": {
+            "invierno": 10,
+            "primavera": 62,
+            "verano": 98,
+            "otono": 26
+        },
+        "times": {
+            "dia": 94,
+            "noche": 28
+        }
+    },
+    "Hawas For Her": {
+        "brand": "rasasi",
+        "gender": "mujer",
+        "image": "Perfumes/Rasasi/hawas for her.jpg",
+        "notes": {
+            "top": "Bergamota, Frutos Rojos, Fresia",
+            "heart": "Rosa, Jazmín, Violeta",
+            "base": "Almizcle, Vainilla, Sándalo"
+        },
+        "seasons": {
+            "invierno": 36,
+            "primavera": 86,
+            "verano": 72,
+            "otono": 62
+        },
+        "times": {
+            "dia": 76,
+            "noche": 72
+        }
+    },
+    "Hawas For Him": {
+        "brand": "rasasi",
+        "gender": "hombre",
+        "image": "Perfumes/Rasasi/hawas for him.jpeg",
+        "notes": {
+            "top": "Bergamota, Lima, Menta",
+            "heart": "Lavanda, Cedro, Cardamomo",
+            "base": "Vetiver, Almizcle, Ámbar"
+        },
+        "seasons": {
+            "invierno": 38,
+            "primavera": 82,
+            "verano": 72,
+            "otono": 62
+        },
+        "times": {
+            "dia": 78,
+            "noche": 68
+        },
+        "badge": "mas-vendido"
+    },
+    "Hawas Ice": {
+        "brand": "rasasi",
+        "gender": "hombre",
+        "image": "Perfumes/Rasasi/hawas ice.webp",
+        "notes": {
+            "top": "Menta, Limón, Bergamota",
+            "heart": "Menta Glacial, Lavanda, Eucalipto",
+            "base": "Almizcle, Cedro, Ámbar Frío"
+        },
+        "seasons": {
+            "invierno": 14,
+            "primavera": 68,
+            "verano": 98,
+            "otono": 32
+        },
+        "times": {
+            "dia": 92,
+            "noche": 28
+        }
+    },
+    "Hawas Viper": {
+        "brand": "rasasi",
+        "gender": "hombre",
+        "image": "Perfumes/Rasasi/hawas viper.png",
+        "notes": {
+            "top": "Pimienta Negra, Bergamota, Cardamomo",
+            "heart": "Cuero, Oud, Incienso",
+            "base": "Almizcle, Ámbar Oscuro, Vetiver"
+        },
+        "seasons": {
+            "invierno": 88,
+            "primavera": 32,
+            "verano": 16,
+            "otono": 78
+        },
+        "times": {
+            "dia": 22,
+            "noche": 96
+        }
+    },
+    "9pm": {
+        "brand": "afnan",
+        "gender": "hombre",
+        "image": "Perfumes/Afnan/afnan 9pm.png",
+        "notes": {
+            "top": "Bergamota, Manzana, Ciruela",
+            "heart": "Rosa, Heliotropo, Jazmín",
+            "base": "Almizcle, Vainilla, Sándalo"
+        },
+        "seasons": {
+            "invierno": 72,
+            "primavera": 52,
+            "verano": 28,
+            "otono": 78
+        },
+        "times": {
+            "dia": 42,
+            "noche": 92
+        },
+        "badge": "mas-vendido"
+    },
+    "9pm Femme": {
+        "brand": "afnan",
+        "gender": "mujer",
+        "image": "Perfumes/Afnan/9 pm mujer.jpg",
+        "notes": {
+            "top": "Naranja Sanguina, Bergamota, Mandarina",
+            "heart": "Rosa, Fresia, Iris",
+            "base": "Almizcle, Cedro, Vainilla"
+        },
+        "seasons": {
+            "invierno": 52,
+            "primavera": 72,
+            "verano": 52,
+            "otono": 68
+        },
+        "times": {
+            "dia": 58,
+            "noche": 82
+        }
+    },
+    "9pm Elixir": {
+        "brand": "afnan",
+        "gender": "unisex",
+        "image": "Perfumes/Afnan/afnan 9pm elixir.png",
+        "notes": {
+            "top": "Azafrán, Bergamota, Cardamomo",
+            "heart": "Rosa, Iris, Violeta",
+            "base": "Ámbar, Almizcle, Vainilla Oscura"
+        },
+        "seasons": {
+            "invierno": 86,
+            "primavera": 36,
+            "verano": 16,
+            "otono": 72
+        },
+        "times": {
+            "dia": 22,
+            "noche": 96
+        }
+    },
+    "9am": {
+        "brand": "afnan",
+        "gender": "hombre",
+        "image": "Perfumes/Afnan/Afnan 9am.png",
+        "notes": {
+            "top": "Naranja, Bergamota, Pomelo",
+            "heart": "Jazmín, Neroli, Rosa",
+            "base": "Cedro, Almizcle, Ámbar"
+        },
+        "seasons": {
+            "invierno": 32,
+            "primavera": 82,
+            "verano": 88,
+            "otono": 52
+        },
+        "times": {
+            "dia": 92,
+            "noche": 30
+        }
+    },
+    "9am Dive": {
+        "brand": "afnan",
+        "gender": "hombre",
+        "image": "Perfumes/Afnan/Afnan 9am Dive.png",
+        "notes": {
+            "top": "Brisa Marina, Bergamota, Menta",
+            "heart": "Lavanda, Cardamomo, Iris",
+            "base": "Almizcle, Cedro, Ámbar Acuático"
+        },
+        "seasons": {
+            "invierno": 18,
+            "primavera": 78,
+            "verano": 96,
+            "otono": 42
+        },
+        "times": {
+            "dia": 90,
+            "noche": 32
+        }
+    },
+    "Supremacy in Oud": {
+        "brand": "afnan",
+        "gender": "unisex",
+        "image": "Perfumes/Afnan/Afnan Supremacy in oud.webp",
+        "notes": {
+            "top": "Azafrán, Rosa, Oud",
+            "heart": "Sándalo, Patchouli, Incienso",
+            "base": "Ámbar, Almizcle, Civeto"
+        },
+        "seasons": {
+            "invierno": 96,
+            "primavera": 22,
+            "verano": 10,
+            "otono": 82
+        },
+        "times": {
+            "dia": 18,
+            "noche": 98
+        }
+    },
+    "Supremacy Purple": {
+        "brand": "afnan",
+        "gender": "hombre",
+        "image": "Perfumes/Afnan/afnan-supremacy-purple.png",
+        "notes": {
+            "top": "Menta, Lavanda, Bergamota",
+            "heart": "Iris, Violeta, Rosa",
+            "base": "Almizcle Blanco, Cedro, Ámbar"
+        },
+        "seasons": {
+            "invierno": 58,
+            "primavera": 82,
+            "verano": 68,
+            "otono": 72
+        },
+        "times": {
+            "dia": 72,
+            "noche": 76
+        }
+    },
+    "Supremacy Silver": {
+        "brand": "afnan",
+        "gender": "hombre",
+        "image": "Perfumes/Afnan/supremacy silver afnan.jpg",
+        "notes": {
+            "top": "Bergamota, Lavanda, Cítricos",
+            "heart": "Jazmín, Geranio, Cedro",
+            "base": "Almizcle, Vetiver, Sándalo"
+        },
+        "seasons": {
+            "invierno": 48,
+            "primavera": 88,
+            "verano": 76,
+            "otono": 62
+        },
+        "times": {
+            "dia": 86,
+            "noche": 58
+        }
+    },
+    "Supremacy in Heaven": {
+        "brand": "afnan",
+        "gender": "hombre",
+        "image": "Perfumes/Afnan/SUPREMACY-IN-HEAVEN-HOMBRE-100ML-EDP-AFNAN.png",
+        "notes": {
+            "top": "Bergamota, Pomelo, Limón",
+            "heart": "Lavanda, Violeta, Rosa",
+            "base": "Almizcle Blanco, Sándalo, Cedro"
+        },
+        "seasons": {
+            "invierno": 38,
+            "primavera": 90,
+            "verano": 88,
+            "otono": 58
+        },
+        "times": {
+            "dia": 88,
+            "noche": 52
+        }
+    },
+    "Supremacy Pink": {
+        "brand": "afnan",
+        "gender": "mujer",
+        "image": "Perfumes/Afnan/SUPREMACY-PINK-MUJER-100ML-EDP-AFNAN.png",
+        "notes": {
+            "top": "Frutos Rojos, Bergamota, Pomelo",
+            "heart": "Rosa, Fresia, Violeta",
+            "base": "Almizcle, Vainilla, Cedro"
+        },
+        "seasons": {
+            "invierno": 38,
+            "primavera": 92,
+            "verano": 72,
+            "otono": 58
+        },
+        "times": {
+            "dia": 86,
+            "noche": 58
+        }
+    },
+    "Turathi Brown": {
+        "brand": "afnan",
+        "gender": "hombre",
+        "image": "Perfumes/Afnan/afnan turathi brown.png",
+        "notes": {
+            "top": "Rosa, Geranio, Oud",
+            "heart": "Cuero, Sándalo, Incienso",
+            "base": "Ámbar, Almizcle, Patchouli"
+        },
+        "seasons": {
+            "invierno": 88,
+            "primavera": 28,
+            "verano": 12,
+            "otono": 76
+        },
+        "times": {
+            "dia": 24,
+            "noche": 96
+        }
+    },
+    "Turathi Purple": {
+        "brand": "afnan",
+        "gender": "hombre",
+        "image": "Perfumes/Afnan/afnan turathi purple.png",
+        "notes": {
+            "top": "Bergamota, Limón, Oud",
+            "heart": "Rosa, Jazmín, Geranio",
+            "base": "Sándalo, Almizcle, Ámbar"
+        },
+        "seasons": {
+            "invierno": 62,
+            "primavera": 52,
+            "verano": 36,
+            "otono": 78
+        },
+        "times": {
+            "dia": 42,
+            "noche": 88
+        }
+    },
+    "Thurathi Rojo": {
+        "brand": "afnan",
+        "gender": "mujer",
+        "image": "Perfumes/Afnan/AFNAN-THURATI-ROJO-MUJER-100ML-EDP-AFNAN.png",
+        "notes": {
+            "top": "Frutas Rojas, Bergamota, Menta",
+            "heart": "Rosa, Fresia, Geranio",
+            "base": "Sándalo, Almizcle, Oud"
+        },
+        "seasons": {
+            "invierno": 62,
+            "primavera": 76,
+            "verano": 48,
+            "otono": 72
+        },
+        "times": {
+            "dia": 56,
+            "noche": 82
+        }
+    },
+    "Turathi Azul": {
+        "brand": "afnan",
+        "gender": "hombre",
+        "image": "Perfumes/Afnan/TURATHI-AZUL-HOMBRE-90ML-EDP-AFNAN-2.png",
+        "notes": {
+            "top": "Bergamota, Oud, Cardamomo",
+            "heart": "Salvia, Cedro, Vetiver",
+            "base": "Almizcle, Ámbar, Sándalo"
+        },
+        "seasons": {
+            "invierno": 68,
+            "primavera": 58,
+            "verano": 42,
+            "otono": 76
+        },
+        "times": {
+            "dia": 56,
+            "noche": 82
+        }
+    },
+    "Turathi Electric": {
+        "brand": "afnan",
+        "gender": "unisex",
+        "image": "Perfumes/Afnan/TURATHI-ELECTRIC-UNISEX-100ML-EDP-AFNAN.png",
+        "notes": {
+            "top": "Pimienta, Cardamomo, Bergamota",
+            "heart": "Oud, Cedro, Cuero",
+            "base": "Sándalo, Almizcle, Ámbar Negro"
+        },
+        "seasons": {
+            "invierno": 82,
+            "primavera": 38,
+            "verano": 22,
+            "otono": 78
+        },
+        "times": {
+            "dia": 36,
+            "noche": 92
+        }
+    },
+    "Zimaya Tiramisu Coco": {
+        "brand": "afnan",
+        "gender": "unisex",
+        "image": "Perfumes/Afnan/afnan zimaya tiramisu coco.png",
+        "notes": {
+            "top": "Coco, Café, Chocolate",
+            "heart": "Caramelo, Vainilla, Crema",
+            "base": "Almizcle, Sándalo, Azúcar"
+        },
+        "seasons": {
+            "invierno": 76,
+            "primavera": 56,
+            "verano": 28,
+            "otono": 82
+        },
+        "times": {
+            "dia": 62,
+            "noche": 88
+        }
+    },
+    "Club de Nuit Intense Mujer": {
+        "brand": "armaf",
+        "gender": "mujer",
+        "image": "Perfumes/Armaf/Armaf Club de nuit intense mujer .png",
+        "notes": {
+            "top": "Naranja, Bergamota, Piña",
+            "heart": "Rosa, Jazmín, Fresia",
+            "base": "Almizcle, Vainilla, Sándalo"
+        },
+        "seasons": {
+            "invierno": 42,
+            "primavera": 82,
+            "verano": 62,
+            "otono": 72
+        },
+        "times": {
+            "dia": 62,
+            "noche": 86
+        }
+    },
+    "Club de Nuit Intense Parfum Extreme": {
+        "brand": "armaf",
+        "gender": "hombre",
+        "image": "Perfumes/Armaf/ARMAF CLUB DE NUIT INTENSE PARFUM EXTREME EDITION HOMBRE 105 ML.png",
+        "notes": {
+            "top": "Piña, Bergamota, Manzana",
+            "heart": "Abedul Ruso, Jazmín, Rosa",
+            "base": "Almizcle, Ámbar, Patchouli"
+        },
+        "seasons": {
+            "invierno": 82,
+            "primavera": 52,
+            "verano": 36,
+            "otono": 86
+        },
+        "times": {
+            "dia": 42,
+            "noche": 96
+        }
+    },
+    "Club de Nuit Parfum Extreme": {
+        "brand": "armaf",
+        "gender": "mujer",
+        "image": "Perfumes/Armaf/ARMAF CLUB DE NUIT PARFUM EXTREME EDITION MUJER 105 ML.png",
+        "notes": {
+            "top": "Naranja, Bergamota, Piña",
+            "heart": "Rosa, Jazmín, Fresia",
+            "base": "Vainilla, Almizcle, Sándalo"
+        },
+        "seasons": {
+            "invierno": 52,
+            "primavera": 78,
+            "verano": 56,
+            "otono": 76
+        },
+        "times": {
+            "dia": 58,
+            "noche": 90
+        }
+    },
+    "Club Sillage": {
+        "brand": "armaf",
+        "gender": "hombre",
+        "image": "Perfumes/Armaf/ARMAF CLUB SILLAGE HOMBRE 105 ML EDP.png",
+        "notes": {
+            "top": "Bergamota, Lima, Cardamomo",
+            "heart": "Lavanda, Geranio, Cedro",
+            "base": "Vetiver, Almizcle, Ámbar"
+        },
+        "seasons": {
+            "invierno": 58,
+            "primavera": 72,
+            "verano": 62,
+            "otono": 72
+        },
+        "times": {
+            "dia": 72,
+            "noche": 72
+        }
+    },
+    "Delights Bom Bom": {
+        "brand": "armaf",
+        "gender": "mujer",
+        "image": "Perfumes/Armaf/armaf delights bom bom.jpg",
+        "notes": {
+            "top": "Frutas Tropicales, Bergamota, Pomelo",
+            "heart": "Maracuyá, Jazmín, Rosa",
+            "base": "Almizcle, Vainilla, Madera Blanca"
+        },
+        "seasons": {
+            "invierno": 18,
+            "primavera": 78,
+            "verano": 92,
+            "otono": 42
+        },
+        "times": {
+            "dia": 88,
+            "noche": 42
+        }
+    },
+    "Dubai Kunafa Chocolat": {
+        "brand": "armaf",
+        "gender": "unisex",
+        "image": "Perfumes/Armaf/armaf dubai kunafa chocolat.webp",
+        "notes": {
+            "top": "Chocolate, Café, Avellana",
+            "heart": "Caramelo, Vainilla, Crema",
+            "base": "Almizcle, Sándalo, Ámbar Dulce"
+        },
+        "seasons": {
+            "invierno": 82,
+            "primavera": 52,
+            "verano": 22,
+            "otono": 88
+        },
+        "times": {
+            "dia": 48,
+            "noche": 92
+        }
+    },
+    "Eter Desert Flower": {
+        "brand": "armaf",
+        "gender": "mujer",
+        "image": "Perfumes/Armaf/armaf eter desert flower .png",
+        "notes": {
+            "top": "Bergamota, Rosa, Fresia",
+            "heart": "Jazmín, Geranio, Iris",
+            "base": "Almizcle, Cedro, Sándalo"
+        },
+        "seasons": {
+            "invierno": 32,
+            "primavera": 92,
+            "verano": 68,
+            "otono": 62
+        },
+        "times": {
+            "dia": 82,
+            "noche": 58
+        }
+    },
+    "Eter Desert Night": {
+        "brand": "armaf",
+        "gender": "unisex",
+        "image": "Perfumes/Armaf/armaf eter desert night.png",
+        "notes": {
+            "top": "Cardamomo, Pimienta Negra, Azafrán",
+            "heart": "Rosa, Oud, Jazmín",
+            "base": "Ámbar, Almizcle, Patchouli"
+        },
+        "seasons": {
+            "invierno": 86,
+            "primavera": 36,
+            "verano": 18,
+            "otono": 82
+        },
+        "times": {
+            "dia": 22,
+            "noche": 96
+        }
+    },
+    "Eter Desert Oasis": {
+        "brand": "armaf",
+        "gender": "unisex",
+        "image": "Perfumes/Armaf/armaf eter desert oasis.png",
+        "notes": {
+            "top": "Brisa Marina, Bergamota, Menta",
+            "heart": "Loto, Algas, Flores Blancas",
+            "base": "Almizcle Blanco, Sándalo, Cedro"
+        },
+        "seasons": {
+            "invierno": 14,
+            "primavera": 68,
+            "verano": 96,
+            "otono": 38
+        },
+        "times": {
+            "dia": 90,
+            "noche": 32
+        }
+    },
+    "Eter Desert Rose": {
+        "brand": "armaf",
+        "gender": "mujer",
+        "image": "Perfumes/Armaf/armaf eter desert rose.png",
+        "notes": {
+            "top": "Bergamota, Limón, Rosa",
+            "heart": "Rosa de Damasco, Geranio, Violeta",
+            "base": "Almizcle, Sándalo, Cedro"
+        },
+        "seasons": {
+            "invierno": 42,
+            "primavera": 96,
+            "verano": 62,
+            "otono": 72
+        },
+        "times": {
+            "dia": 76,
+            "noche": 68
+        }
+    },
+    "Eter Desert Star": {
+        "brand": "armaf",
+        "gender": "unisex",
+        "image": "Perfumes/Armaf/ARMAF-ETER-DESERT-STAR-UNISEX-100ML-EDP-ARMAF.png",
+        "notes": {
+            "top": "Pimienta Rosa, Bergamota, Cardamomo",
+            "heart": "Rosa, Oud, Jazmín",
+            "base": "Ámbar Dorado, Almizcle, Madera"
+        },
+        "seasons": {
+            "invierno": 72,
+            "primavera": 52,
+            "verano": 38,
+            "otono": 82
+        },
+        "times": {
+            "dia": 46,
+            "noche": 90
+        }
+    },
+    "Yum Yum": {
+        "brand": "armaf",
+        "gender": "mujer",
+        "image": "Perfumes/Armaf/armaf yum yum.jpg",
+        "notes": {
+            "top": "Crema, Caramelo, Vainilla",
+            "heart": "Chocolate Blanco, Almendra, Coco",
+            "base": "Almizcle, Sándalo, Ámbar Dulce"
+        },
+        "seasons": {
+            "invierno": 72,
+            "primavera": 56,
+            "verano": 32,
+            "otono": 82
+        },
+        "times": {
+            "dia": 58,
+            "noche": 86
+        }
+    },
+    "Club de Nuit Iconic": {
+        "brand": "armaf",
+        "gender": "hombre",
+        "image": "Perfumes/Armaf/club the nuit iconic.png",
+        "notes": {
+            "top": "Bergamota, Lima, Cardamomo",
+            "heart": "Violeta, Iris, Cedro",
+            "base": "Vetiver, Almizcle, Patchouli"
+        },
+        "seasons": {
+            "invierno": 72,
+            "primavera": 56,
+            "verano": 36,
+            "otono": 82
+        },
+        "times": {
+            "dia": 46,
+            "noche": 90
+        }
+    },
+    "Club de Nuit Urban Man": {
+        "brand": "armaf",
+        "gender": "hombre",
+        "image": "Perfumes/Armaf/Club the nuit urban man.jpg",
+        "notes": {
+            "top": "Bergamota, Cardamomo, Pimienta",
+            "heart": "Rosa, Geranio, Patchouli",
+            "base": "Cedro, Almizcle, Oud"
+        },
+        "seasons": {
+            "invierno": 78,
+            "primavera": 46,
+            "verano": 26,
+            "otono": 82
+        },
+        "times": {
+            "dia": 36,
+            "noche": 94
+        }
+    },
+    "Odyssey Aoud": {
+        "brand": "armaf",
+        "gender": "hombre",
+        "image": "Perfumes/Armaf/odyssey aoud.png",
+        "notes": {
+            "top": "Azafrán, Bergamota, Cardamomo",
+            "heart": "Oud, Rosa, Geranio",
+            "base": "Sándalo, Almizcle, Ámbar"
+        },
+        "seasons": {
+            "invierno": 88,
+            "primavera": 36,
+            "verano": 16,
+            "otono": 78
+        },
+        "times": {
+            "dia": 22,
+            "noche": 96
+        }
+    },
+    "Odyssey Aqua": {
+        "brand": "armaf",
+        "gender": "hombre",
+        "image": "Perfumes/Armaf/odyssey aqua.png",
+        "notes": {
+            "top": "Bergamota, Lima, Brisa Marina",
+            "heart": "Lavanda Acuática, Geranio, Cardamomo",
+            "base": "Almizcle, Cedro, Ambroxan"
+        },
+        "seasons": {
+            "invierno": 16,
+            "primavera": 78,
+            "verano": 96,
+            "otono": 42
+        },
+        "times": {
+            "dia": 90,
+            "noche": 32
+        }
+    },
+    "Odyssey Black Forest": {
+        "brand": "armaf",
+        "gender": "hombre",
+        "image": "Perfumes/Armaf/odyssey black forest.png",
+        "notes": {
+            "top": "Pimienta Negra, Cardamomo, Bergamota",
+            "heart": "Patchouli, Iris, Cedro",
+            "base": "Vetiver, Oud, Almizcle Oscuro"
+        },
+        "seasons": {
+            "invierno": 86,
+            "primavera": 36,
+            "verano": 18,
+            "otono": 82
+        },
+        "times": {
+            "dia": 26,
+            "noche": 96
+        }
+    },
+    "Odyssey Dubai Chocolat": {
+        "brand": "armaf",
+        "gender": "unisex",
+        "image": "Perfumes/Armaf/odyssey dubai chocolat.webp",
+        "notes": {
+            "top": "Chocolate, Café, Frambuesa",
+            "heart": "Caramelo, Rosa, Vainilla",
+            "base": "Sándalo, Almizcle, Ámbar Dulce"
+        },
+        "seasons": {
+            "invierno": 82,
+            "primavera": 52,
+            "verano": 22,
+            "otono": 88
+        },
+        "times": {
+            "dia": 46,
+            "noche": 92
+        }
+    },
+    "Odyssey Eau de Montagne": {
+        "brand": "armaf",
+        "gender": "hombre",
+        "image": "Perfumes/Armaf/odyssey eau de montagne.png",
+        "notes": {
+            "top": "Bergamota, Pino, Cardamomo",
+            "heart": "Artemisa, Salvia, Cedro",
+            "base": "Vetiver, Cedro Blanco, Almizcle"
+        },
+        "seasons": {
+            "invierno": 72,
+            "primavera": 78,
+            "verano": 42,
+            "otono": 86
+        },
+        "times": {
+            "dia": 68,
+            "noche": 62
+        }
+    },
+    "Odyssey Femme": {
+        "brand": "armaf",
+        "gender": "mujer",
+        "image": "Perfumes/Armaf/odyssey femme.png",
+        "notes": {
+            "top": "Bergamota, Frutos Rojos, Pomelo",
+            "heart": "Rosa, Jazmín, Iris",
+            "base": "Almizcle, Vainilla, Sándalo"
+        },
+        "seasons": {
+            "invierno": 38,
+            "primavera": 88,
+            "verano": 68,
+            "otono": 72
+        },
+        "times": {
+            "dia": 72,
+            "noche": 78
+        }
+    },
+    "Odyssey Limoni": {
+        "brand": "armaf",
+        "gender": "hombre",
+        "image": "Perfumes/Armaf/odyssey limoni.png",
+        "notes": {
+            "top": "Limón, Bergamota, Lima",
+            "heart": "Menta, Lavanda, Albahaca",
+            "base": "Almizcle, Cedro, Vetiver"
+        },
+        "seasons": {
+            "invierno": 22,
+            "primavera": 88,
+            "verano": 96,
+            "otono": 48
+        },
+        "times": {
+            "dia": 90,
+            "noche": 36
+        }
+    },
+    "Odyssey Marshmallow": {
+        "brand": "armaf",
+        "gender": "mujer",
+        "image": "Perfumes/Armaf/odyssey marshmallow.png",
+        "notes": {
+            "top": "Frambuesa, Crema, Vainilla",
+            "heart": "Marshmallow, Coco, Almendra",
+            "base": "Almizcle, Sándalo, Ámbar Dulce"
+        },
+        "seasons": {
+            "invierno": 68,
+            "primavera": 62,
+            "verano": 38,
+            "otono": 76
+        },
+        "times": {
+            "dia": 62,
+            "noche": 86
+        }
+    },
+    "Odyssey Mega": {
+        "brand": "armaf",
+        "gender": "hombre",
+        "image": "Perfumes/Armaf/odyssey mega.png",
+        "notes": {
+            "top": "Bergamota, Pomelo, Pimienta",
+            "heart": "Cedro, Vetiver, Patchouli",
+            "base": "Oud, Ámbar, Almizcle"
+        },
+        "seasons": {
+            "invierno": 72,
+            "primavera": 52,
+            "verano": 32,
+            "otono": 82
+        },
+        "times": {
+            "dia": 42,
+            "noche": 90
+        }
+    },
+    "Odyssey Candee": {
+        "brand": "armaf",
+        "gender": "mujer",
+        "image": "Perfumes/Armaf/Odyssey-Candee-para-Mujer.png",
+        "notes": {
+            "top": "Maracuyá, Coco, Bergamota",
+            "heart": "Fresia, Jazmín, Rosa",
+            "base": "Almizcle, Vainilla, Madera Blanca"
+        },
+        "seasons": {
+            "invierno": 18,
+            "primavera": 82,
+            "verano": 92,
+            "otono": 42
+        },
+        "times": {
+            "dia": 86,
+            "noche": 46
+        }
+    },
+    "Odyssey Go Mango": {
+        "brand": "armaf",
+        "gender": "unisex",
+        "image": "Perfumes/Armaf/ODYSSEY-GO-MANGO.png",
+        "notes": {
+            "top": "Mango, Maracuyá, Naranja",
+            "heart": "Coco, Fresia, Jazmín Tropical",
+            "base": "Almizcle, Vainilla, Sándalo"
+        },
+        "seasons": {
+            "invierno": 12,
+            "primavera": 72,
+            "verano": 98,
+            "otono": 32
+        },
+        "times": {
+            "dia": 92,
+            "noche": 28
+        }
+    },
+    "Odyssey Revolution": {
+        "brand": "armaf",
+        "gender": "hombre",
+        "image": "Perfumes/Armaf/Odyssey-Revolution-ultra edition.png",
+        "notes": {
+            "top": "Pimienta Negra, Bergamota, Cardamomo",
+            "heart": "Oud, Cedro, Cuero",
+            "base": "Ámbar, Almizcle, Vetiver"
+        },
+        "seasons": {
+            "invierno": 82,
+            "primavera": 42,
+            "verano": 22,
+            "otono": 82
+        },
+        "times": {
+            "dia": 36,
+            "noche": 94
+        }
+    },
+    "Odyssey Toffee Coffee": {
+        "brand": "armaf",
+        "gender": "unisex",
+        "image": "Perfumes/Armaf/odyssey-toffee-coffee-armaf-100-ml-edp.png",
+        "notes": {
+            "top": "Toffee, Caramelo, Café",
+            "heart": "Vainilla, Crema, Cacao",
+            "base": "Almizcle, Sándalo, Ámbar Dulce"
+        },
+        "seasons": {
+            "invierno": 82,
+            "primavera": 56,
+            "verano": 22,
+            "otono": 88
+        },
+        "times": {
+            "dia": 52,
+            "noche": 92
+        }
+    },
+    "Odyssey Mandarin Sky Vintage": {
+        "brand": "armaf",
+        "gender": "hombre",
+        "image": "Perfumes/Armaf/perfume-armaf-odyssey-mandarin-sky-vintage-edition-edp-m-100-ml.png",
+        "notes": {
+            "top": "Mandarina, Bergamota, Lima",
+            "heart": "Neroli, Cardamomo, Menta",
+            "base": "Cedro, Almizcle, Vetiver"
+        },
+        "seasons": {
+            "invierno": 32,
+            "primavera": 86,
+            "verano": 92,
+            "otono": 58
+        },
+        "times": {
+            "dia": 88,
+            "noche": 42
+        }
+    },
+    "Aventus": {
+        "brand": "creed",
+        "gender": "hombre",
+        "image": "Perfumes/Creed/Creed Aventus Hombre 100 ml EDP — ₡210 000.png",
+        "notes": {
+            "top": "Piña, Abedul Ahumado, Manzana, Bergamota",
+            "heart": "Rosa, Jazmín, Patchouli, Abedul",
+            "base": "Almizcle, Ámbar, Vetiver, Musgo de Roble"
+        },
+        "seasons": {
+            "invierno": 72,
+            "primavera": 68,
+            "verano": 52,
+            "otono": 82
+        },
+        "times": {
+            "dia": 68,
+            "noche": 88
+        },
+        "badge": "mas-vendido"
+    },
+    "Aventus Cologne": {
+        "brand": "creed",
+        "gender": "hombre",
+        "image": "Perfumes/Creed/Creed Aventus Cologne Hombre 100 ml EDP — ₡165 000.webp",
+        "notes": {
+            "top": "Bergamota, Grosella Negra, Menta",
+            "heart": "Lavanda, Rosa, Litchi",
+            "base": "Vetiver, Cedro, Almizcle"
+        },
+        "seasons": {
+            "invierno": 28,
+            "primavera": 90,
+            "verano": 92,
+            "otono": 56
+        },
+        "times": {
+            "dia": 90,
+            "noche": 46
+        }
+    },
+    "Absolu Aventus": {
+        "brand": "creed",
+        "gender": "hombre",
+        "image": "Perfumes/Creed/Creed Absolu Aventus Hombre 100 ml EDP — ₡298 000.png",
+        "notes": {
+            "top": "Piña, Bergamota, Manzana",
+            "heart": "Abedul de Rusia, Patchouli, Rosa",
+            "base": "Oud, Ámbar, Almizcle"
+        },
+        "seasons": {
+            "invierno": 82,
+            "primavera": 52,
+            "verano": 36,
+            "otono": 82
+        },
+        "times": {
+            "dia": 48,
+            "noche": 96
+        },
+        "badge": "nuevo"
+    },
+    "Centaurus": {
+        "brand": "creed",
+        "gender": "unisex",
+        "image": "Perfumes/Creed/Creed Centaurus Unisex 100 ml EDP — ₡217 500.png",
+        "notes": {
+            "top": "Bergamota, Pomelo, Limón",
+            "heart": "Rosa, Geranio, Lavanda",
+            "base": "Almizcle, Cedro, Vetiver"
+        },
+        "seasons": {
+            "invierno": 38,
+            "primavera": 88,
+            "verano": 82,
+            "otono": 62
+        },
+        "times": {
+            "dia": 84,
+            "noche": 58
+        }
+    },
+    "Delphinus": {
+        "brand": "creed",
+        "gender": "unisex",
+        "image": "Perfumes/Creed/Creed Delphinus Unisex 100 ml EDP — ₡213 500.png",
+        "notes": {
+            "top": "Bergamota, Limón, Pomelo",
+            "heart": "Neroli, Jazmín, Geranio",
+            "base": "Almizcle, Sándalo, Ámbar"
+        },
+        "seasons": {
+            "invierno": 32,
+            "primavera": 86,
+            "verano": 88,
+            "otono": 56
+        },
+        "times": {
+            "dia": 86,
+            "noche": 46
+        }
+    },
+    "Green Irish Tweed": {
+        "brand": "creed",
+        "gender": "hombre",
+        "image": "Perfumes/Creed/Creed Green Irish Tweed 100 ml EDP — ₡166 000.png",
+        "notes": {
+            "top": "Verbena Francesa, Menta, Iris",
+            "heart": "Jazmín, Geranio, Sándalo",
+            "base": "Madera de Cachemira, Almizcle, Vetiver"
+        },
+        "seasons": {
+            "invierno": 32,
+            "primavera": 90,
+            "verano": 82,
+            "otono": 62
+        },
+        "times": {
+            "dia": 86,
+            "noche": 52
+        }
+    },
+    "Himalaya": {
+        "brand": "creed",
+        "gender": "hombre",
+        "image": "Perfumes/Creed/Creed Himalaya 100 ml EDP — ₡144 000.png",
+        "notes": {
+            "top": "Bergamota, Limón, Mandarina",
+            "heart": "Jazmín, Geranio, Cedro",
+            "base": "Almizcle, Sándalo, Ámbar"
+        },
+        "seasons": {
+            "invierno": 42,
+            "primavera": 86,
+            "verano": 72,
+            "otono": 68
+        },
+        "times": {
+            "dia": 82,
+            "noche": 58
+        }
+    },
+    "Neroli Sauvage": {
+        "brand": "creed",
+        "gender": "unisex",
+        "image": "Perfumes/Creed/Creed Neroli Sauvage Unisex 100 ml EDP — ₡145 000.png",
+        "notes": {
+            "top": "Neroli, Bergamota, Limón",
+            "heart": "Jazmín, Rosa, Geranio",
+            "base": "Almizcle Blanco, Sándalo, Cedro"
+        },
+        "seasons": {
+            "invierno": 26,
+            "primavera": 92,
+            "verano": 88,
+            "otono": 52
+        },
+        "times": {
+            "dia": 88,
+            "noche": 52
+        }
+    },
+    "Original Santal": {
+        "brand": "creed",
+        "gender": "unisex",
+        "image": "Perfumes/Creed/Creed Original Santal Unisex 100 ml EDP — ₡178 000.png",
+        "notes": {
+            "top": "Bergamota, Pomelo, Mandarina",
+            "heart": "Geranio, Rosa, Lavanda",
+            "base": "Sándalo, Almizcle, Vetiver"
+        },
+        "seasons": {
+            "invierno": 48,
+            "primavera": 82,
+            "verano": 72,
+            "otono": 72
+        },
+        "times": {
+            "dia": 78,
+            "noche": 62
+        }
+    },
+    "Original Vetiver": {
+        "brand": "creed",
+        "gender": "hombre",
+        "image": "Perfumes/Creed/Creed Original Vetiver 100 ml EDP — ₡168 000.png",
+        "notes": {
+            "top": "Pomelo, Lima, Bergamota",
+            "heart": "Neroli, Geranio, Iris",
+            "base": "Vetiver, Almizcle, Sándalo"
+        },
+        "seasons": {
+            "invierno": 48,
+            "primavera": 86,
+            "verano": 82,
+            "otono": 62
+        },
+        "times": {
+            "dia": 82,
+            "noche": 52
+        }
+    },
+    "Royal Water": {
+        "brand": "creed",
+        "gender": "unisex",
+        "image": "Perfumes/Creed/Creed Royal Water Unisex 100 ml EDP — ₡144 000.png",
+        "notes": {
+            "top": "Bergamota, Pomelo, Peperoncino",
+            "heart": "Menta, Vetiver, Raíz de Iris",
+            "base": "Almizcle, Ámbar, Sándalo"
+        },
+        "seasons": {
+            "invierno": 28,
+            "primavera": 88,
+            "verano": 92,
+            "otono": 52
+        },
+        "times": {
+            "dia": 90,
+            "noche": 40
+        }
+    },
+    "Silver Mountain Water": {
+        "brand": "creed",
+        "gender": "unisex",
+        "image": "Perfumes/Creed/Creed Silver Mountain Water 250 ml EDP — ₡352 000.png",
+        "notes": {
+            "top": "Té Verde, Bergamota, Naranja",
+            "heart": "Grosella Negra, Melocotón, Neroli",
+            "base": "Almizcle, Sándalo, Cedro"
+        },
+        "seasons": {
+            "invierno": 22,
+            "primavera": 86,
+            "verano": 92,
+            "otono": 48
+        },
+        "times": {
+            "dia": 90,
+            "noche": 38
+        }
+    },
+    "Viking": {
+        "brand": "creed",
+        "gender": "hombre",
+        "image": "Perfumes/Creed/Creed Viking 100 ml EDP — ₡158 000.png",
+        "notes": {
+            "top": "Pimienta Rosada, Lavanda, Bergamota",
+            "heart": "Geranio, Pino, Cedro",
+            "base": "Vetiver, Almizcle, Ámbar"
+        },
+        "seasons": {
+            "invierno": 62,
+            "primavera": 72,
+            "verano": 48,
+            "otono": 82
+        },
+        "times": {
+            "dia": 62,
+            "noche": 82
+        },
+        "badge": "mas-vendido"
+    },
+    "Viking Cologne": {
+        "brand": "creed",
+        "gender": "hombre",
+        "image": "Perfumes/Creed/Creed Viking Cologne 100 ml EDP — ₡165 000.png",
+        "notes": {
+            "top": "Bergamota, Lima, Limón",
+            "heart": "Lavanda, Pimienta Blanca, Geranio",
+            "base": "Almizcle, Cedro, Vetiver"
+        },
+        "seasons": {
+            "invierno": 28,
+            "primavera": 86,
+            "verano": 92,
+            "otono": 52
+        },
+        "times": {
+            "dia": 90,
+            "noche": 46
+        },
+        "badge": "nuevo"
+    },
+    "Dior Addict": {
+        "brand": "dior",
+        "gender": "mujer",
+        "image": "Perfumes/Dior/CHRISTIAN DIOR ADDICT MUJER 100 ML EDP.png",
+        "notes": {
+            "top": "Mandarina, Bergamota, Rosa",
+            "heart": "Jazmín, Fresia, Orquídea",
+            "base": "Vainilla, Almizcle, Sándalo"
+        },
+        "seasons": {
+            "invierno": 48,
+            "primavera": 78,
+            "verano": 62,
+            "otono": 72
+        },
+        "times": {
+            "dia": 62,
+            "noche": 88
+        }
+    },
+    "Dune": {
+        "brand": "dior",
+        "gender": "hombre",
+        "image": "Perfumes/Dior/CHRISTIAN DIOR DUNE HOMBRE 100 ML EDT.png",
+        "notes": {
+            "top": "Aldeídos, Bergamota, Cilantro",
+            "heart": "Lavanda, Incienso, Artemisa",
+            "base": "Ámbar, Almizcle, Sándalo"
+        },
+        "seasons": {
+            "invierno": 72,
+            "primavera": 58,
+            "verano": 42,
+            "otono": 82
+        },
+        "times": {
+            "dia": 58,
+            "noche": 82
+        }
+    },
+    "Fahrenheit": {
+        "brand": "dior",
+        "gender": "hombre",
+        "image": "Perfumes/Dior/CHRISTIAN DIOR FAHRENHEIT 100 ML EDT.png",
+        "notes": {
+            "top": "Limón, Bergamota, Mandarina",
+            "heart": "Violeta, Enebro, Palosanto",
+            "base": "Almizcle, Sándalo, Cuero"
+        },
+        "seasons": {
+            "invierno": 72,
+            "primavera": 48,
+            "verano": 36,
+            "otono": 82
+        },
+        "times": {
+            "dia": 52,
+            "noche": 88
+        }
+    },
+    "Miss Dior": {
+        "brand": "dior",
+        "gender": "mujer",
+        "image": "Perfumes/Dior/CHRISTIAN DIOR MISS DIOR 100 ML EDP (2021).png",
+        "notes": {
+            "top": "Bergamota, Neroli, Mandarina",
+            "heart": "Flor de Naranjo, Peonía, Rosa",
+            "base": "Almizcle, Patchouli, Cedro"
+        },
+        "seasons": {
+            "invierno": 42,
+            "primavera": 90,
+            "verano": 68,
+            "otono": 70
+        },
+        "times": {
+            "dia": 74,
+            "noche": 72
+        }
+    },
+    "Poison": {
+        "brand": "dior",
+        "gender": "mujer",
+        "image": "Perfumes/Dior/CHRISTIAN DIOR POISON 100 ML EDT.png",
+        "notes": {
+            "top": "Naranja, Bergamota, Aldeídos",
+            "heart": "Rosa, Jazmín, Tubérosa",
+            "base": "Almizcle, Sándalo, Vetiver"
+        },
+        "seasons": {
+            "invierno": 82,
+            "primavera": 42,
+            "verano": 18,
+            "otono": 78
+        },
+        "times": {
+            "dia": 26,
+            "noche": 96
+        }
+    },
+    "Poison Girl": {
+        "brand": "dior",
+        "gender": "mujer",
+        "image": "Perfumes/Dior/CHRISTIAN DIOR POISON GIRL 100 ML EDT.png",
+        "notes": {
+            "top": "Naranja Amarga, Almendra",
+            "heart": "Rosa de Grasse, Heliotropo",
+            "base": "Vainilla, Sándalo, Benjuí"
+        },
+        "seasons": {
+            "invierno": 68,
+            "primavera": 56,
+            "verano": 28,
+            "otono": 78
+        },
+        "times": {
+            "dia": 42,
+            "noche": 92
+        }
+    },
+    "Hypnotic Poison": {
+        "brand": "dior",
+        "gender": "mujer",
+        "image": "Perfumes/Dior/CHRISTIAN DIOR POISON HYPNOTIC 100 ML EDT.png",
+        "notes": {
+            "top": "Almendra Amarga, Jacaranda, Pomelo",
+            "heart": "Jazmín, Rosa, Tubérosa",
+            "base": "Sándalo, Almizcle, Vainilla"
+        },
+        "seasons": {
+            "invierno": 78,
+            "primavera": 46,
+            "verano": 22,
+            "otono": 82
+        },
+        "times": {
+            "dia": 32,
+            "noche": 96
+        }
+    },
+    "Pure Poison": {
+        "brand": "dior",
+        "gender": "mujer",
+        "image": "Perfumes/Dior/CHRISTIAN DIOR POISON PURE 100 ML EDP.png",
+        "notes": {
+            "top": "Mandarina, Jazmín, Gardenia",
+            "heart": "Jazmín de Grasse, Rosa, Naranja",
+            "base": "Almizcle, Sándalo, Palisandro"
+        },
+        "seasons": {
+            "invierno": 52,
+            "primavera": 82,
+            "verano": 72,
+            "otono": 68
+        },
+        "times": {
+            "dia": 68,
+            "noche": 82
+        }
+    },
+    "Sauvage EDP": {
+        "brand": "dior",
+        "gender": "hombre",
+        "image": "Perfumes/Dior/CHRISTIAN DIOR SAUVAGE 200 ML EDP.png",
+        "notes": {
+            "top": "Pimienta de Sichuan, Brisa Marina",
+            "heart": "Lavanda, Geranio, Vetiver",
+            "base": "Ambroxan, Cedro, Oud Labdanum"
+        },
+        "seasons": {
+            "invierno": 72,
+            "primavera": 72,
+            "verano": 62,
+            "otono": 82
+        },
+        "times": {
+            "dia": 72,
+            "noche": 82
+        },
+        "badge": "mas-vendido"
+    },
+    "Sauvage Parfum": {
+        "brand": "dior",
+        "gender": "hombre",
+        "image": "Perfumes/Dior/CHRISTIAN DIOR SAUVAGE 200 ML PARFUM.png",
+        "notes": {
+            "top": "Bergamota, Nuez",
+            "heart": "Lavanda, Iris",
+            "base": "Ámbar, Cedro, Almizcle de Sándalo"
+        },
+        "seasons": {
+            "invierno": 78,
+            "primavera": 58,
+            "verano": 48,
+            "otono": 86
+        },
+        "times": {
+            "dia": 62,
+            "noche": 90
+        }
+    },
+    "Sauvage Eau Forte": {
+        "brand": "dior",
+        "gender": "hombre",
+        "image": "Perfumes/Dior/CHRISTIAN DIOR SAUVAGE EAU FORTE 100 ML PARFUM.png",
+        "notes": {
+            "top": "Bergamota, Mandarina Fresca",
+            "heart": "Lavanda, Pimienta",
+            "base": "Ambroxan, Cedro, Patchouli"
+        },
+        "seasons": {
+            "invierno": 58,
+            "primavera": 76,
+            "verano": 78,
+            "otono": 72
+        },
+        "times": {
+            "dia": 82,
+            "noche": 62
+        }
+    },
+    "Sauvage Elixir": {
+        "brand": "dior",
+        "gender": "hombre",
+        "image": "Perfumes/Dior/CHRISTIAN DIOR SAUVAGE ELIXER 100 ML PARFUM.png",
+        "notes": {
+            "top": "Cardamomo, Nuez India, Jengibre",
+            "heart": "Lavanda, Nuez Moscada, Canela",
+            "base": "Ámbar Gris, Almizcle, Palo Santo"
+        },
+        "seasons": {
+            "invierno": 88,
+            "primavera": 46,
+            "verano": 28,
+            "otono": 82
+        },
+        "times": {
+            "dia": 36,
+            "noche": 96
+        },
+        "badge": "nuevo"
+    },
+    "24 Carat Pure Gold": {
+        "brand": "lataffa",
+        "gender": "unisex",
+        "image": "Perfumes/Lataffa/LATTAFA 24 CARAT PURE GOLD 100 ML EDP (UNISEX).jpeg",
+        "notes": {
+            "top": "Azafrán, Rosa, Oud",
+            "heart": "Jazmín, Vetiver, Cuero",
+            "base": "Oud, Almizcle, Ámbar"
+        },
+        "seasons": {
+            "invierno": 92,
+            "primavera": 28,
+            "verano": 12,
+            "otono": 76
+        },
+        "times": {
+            "dia": 22,
+            "noche": 96
+        }
+    },
+    "Ajayeb Dubai": {
+        "brand": "lataffa",
+        "gender": "unisex",
+        "image": "Perfumes/Lataffa/LATTAFA AJAYEB DUBAI 100 ML EDP (UNISEX).jpeg",
+        "notes": {
+            "top": "Bergamota, Oud, Pimienta",
+            "heart": "Rosa, Jazmín, Sándalo",
+            "base": "Ámbar, Almizcle, Oud"
+        },
+        "seasons": {
+            "invierno": 88,
+            "primavera": 36,
+            "verano": 16,
+            "otono": 82
+        },
+        "times": {
+            "dia": 28,
+            "noche": 96
+        }
+    },
+    "Asad Elixir": {
+        "brand": "lataffa",
+        "gender": "hombre",
+        "image": "Perfumes/Lataffa/LATTAFA ASAD ELIXIR HOMBRE 100 ML EDP.png",
+        "notes": {
+            "top": "Pimienta Negra, Bergamota, Pino",
+            "heart": "Cedro, Cuero, Sándalo",
+            "base": "Oud, Ámbar, Almizcle"
+        },
+        "seasons": {
+            "invierno": 86,
+            "primavera": 36,
+            "verano": 16,
+            "otono": 82
+        },
+        "times": {
+            "dia": 26,
+            "noche": 96
+        },
+        "badge": "nuevo"
+    },
+    "Badee Al Oud Honor": {
+        "brand": "lataffa",
+        "gender": "unisex",
+        "image": "Perfumes/Lataffa/LATTAFA BADEE AL OUD HONOR UNISEX 100 ML EDP.jpeg",
+        "notes": {
+            "top": "Bergamota, Oud, Azafrán",
+            "heart": "Rosa, Jazmín, Geranio",
+            "base": "Oud, Almizcle, Ámbar"
+        },
+        "seasons": {
+            "invierno": 92,
+            "primavera": 26,
+            "verano": 12,
+            "otono": 78
+        },
+        "times": {
+            "dia": 16,
+            "noche": 98
+        }
+    },
+    "Brioche Vanille": {
+        "brand": "lataffa",
+        "gender": "unisex",
+        "image": "Perfumes/Lataffa/LATTAFA BRIOCHE VANILLE UNISEX 100 ML EDP.jpeg",
+        "notes": {
+            "top": "Almendra, Vainilla, Coco",
+            "heart": "Crema de Vainilla, Caramelo, Mantequilla",
+            "base": "Almizcle, Sándalo, Ámbar Dulce"
+        },
+        "seasons": {
+            "invierno": 78,
+            "primavera": 58,
+            "verano": 26,
+            "otono": 86
+        },
+        "times": {
+            "dia": 56,
+            "noche": 90
+        }
+    },
+    "Eclaire": {
+        "brand": "lataffa",
+        "gender": "mujer",
+        "image": "Perfumes/Lataffa/LATTAFA ECLAIRE MUJER 100 ML EDP.jpeg",
+        "notes": {
+            "top": "Frutos Rojos, Bergamota, Pomelo",
+            "heart": "Peonía, Rosa, Fresia",
+            "base": "Almizcle, Sándalo, Vainilla"
+        },
+        "seasons": {
+            "invierno": 38,
+            "primavera": 92,
+            "verano": 72,
+            "otono": 62
+        },
+        "times": {
+            "dia": 78,
+            "noche": 74
+        }
+    },
+    "Eclaire Banoffi": {
+        "brand": "lataffa",
+        "gender": "mujer",
+        "image": "Perfumes/Lataffa/LATTAFA ECLAIRE BANOFFI MUJER 100 ML EDP.jpeg",
+        "notes": {
+            "top": "Plátano, Caramelo, Vainilla",
+            "heart": "Toffee, Caramelo, Mantequilla",
+            "base": "Almizcle, Sándalo, Ámbar Dulce"
+        },
+        "seasons": {
+            "invierno": 72,
+            "primavera": 56,
+            "verano": 32,
+            "otono": 82
+        },
+        "times": {
+            "dia": 56,
+            "noche": 88
+        }
+    },
+    "Eclaire Pistache": {
+        "brand": "lataffa",
+        "gender": "mujer",
+        "image": "Perfumes/Lataffa/LATTAFA ECLAIRE PISTACHE MUJER 100 ML EDP.jpeg",
+        "notes": {
+            "top": "Pistacho, Almendra, Vainilla",
+            "heart": "Crema, Caramelo, Jazmín",
+            "base": "Almizcle, Sándalo, Vainilla"
+        },
+        "seasons": {
+            "invierno": 72,
+            "primavera": 58,
+            "verano": 32,
+            "otono": 82
+        },
+        "times": {
+            "dia": 58,
+            "noche": 88
+        }
+    },
+    "Emeer": {
+        "brand": "lataffa",
+        "gender": "unisex",
+        "image": "Perfumes/Lataffa/LATTAFA EMEER UNISEX 100 ML EDP.jpeg",
+        "notes": {
+            "top": "Bergamota, Oud, Cardamomo",
+            "heart": "Rosa, Jazmín, Incienso",
+            "base": "Oud, Almizcle, Ámbar"
+        },
+        "seasons": {
+            "invierno": 88,
+            "primavera": 34,
+            "verano": 16,
+            "otono": 78
+        },
+        "times": {
+            "dia": 22,
+            "noche": 96
+        }
+    },
+    "Fakhar": {
+        "brand": "lataffa",
+        "gender": "hombre",
+        "image": "Perfumes/Lataffa/LATTAFA FAKHAR HOMBRE 100 ML EDP.jpg",
+        "notes": {
+            "top": "Bergamota, Oud, Cardamomo",
+            "heart": "Rosa, Cuero, Incienso",
+            "base": "Oud, Almizcle, Ámbar"
+        },
+        "seasons": {
+            "invierno": 88,
+            "primavera": 32,
+            "verano": 14,
+            "otono": 78
+        },
+        "times": {
+            "dia": 22,
+            "noche": 96
+        }
+    },
+    "Fakhar Mujer": {
+        "brand": "lataffa",
+        "gender": "mujer",
+        "image": "Perfumes/Lataffa/LATTAFA FAKHAR MUJER 100 ML EDP.jpg",
+        "notes": {
+            "top": "Bergamota, Rosa, Frutos Rojos",
+            "heart": "Peonía, Jazmín, Iris",
+            "base": "Almizcle, Sándalo, Vainilla"
+        },
+        "seasons": {
+            "invierno": 52,
+            "primavera": 86,
+            "verano": 62,
+            "otono": 72
+        },
+        "times": {
+            "dia": 68,
+            "noche": 82
+        }
+    },
+    "Fakhar Platin": {
+        "brand": "lataffa",
+        "gender": "hombre",
+        "image": "Perfumes/Lataffa/LATTAFA FAKHAR PLATIN HOMBRE 100 ML EDP.png",
+        "notes": {
+            "top": "Bergamota, Pomelo, Lima",
+            "heart": "Cedro, Sándalo, Vetiver",
+            "base": "Almizcle, Ámbar, Oud Blanco"
+        },
+        "seasons": {
+            "invierno": 56,
+            "primavera": 82,
+            "verano": 72,
+            "otono": 68
+        },
+        "times": {
+            "dia": 76,
+            "noche": 68
+        }
+    },
+    "Give Me Gourmand Berry on Top": {
+        "brand": "lataffa",
+        "gender": "mujer",
+        "image": "Perfumes/Lataffa/LATTAFA GIVE ME GOURMAND BERRY ON TOP MUJER 75 ML EDP.png",
+        "notes": {
+            "top": "Frutos Rojos, Frambuesa, Fresa",
+            "heart": "Rosa, Peonía, Fresia",
+            "base": "Almizcle, Vainilla, Sándalo"
+        },
+        "seasons": {
+            "invierno": 32,
+            "primavera": 88,
+            "verano": 68,
+            "otono": 52
+        },
+        "times": {
+            "dia": 78,
+            "noche": 68
+        }
+    },
+    "Give Me Gourmand Choco Overdose": {
+        "brand": "lataffa",
+        "gender": "mujer",
+        "image": "Perfumes/Lataffa/LATTAFA GIVE ME GOURMAND CHOCO OVERDOSE MUJER 75 ML EDP.png",
+        "notes": {
+            "top": "Cacao, Chocolate Negro, Almendra",
+            "heart": "Caramelo, Vainilla, Praline",
+            "base": "Almizcle, Sándalo, Ámbar Dulce"
+        },
+        "seasons": {
+            "invierno": 82,
+            "primavera": 52,
+            "verano": 22,
+            "otono": 88
+        },
+        "times": {
+            "dia": 48,
+            "noche": 92
+        }
+    },
+    "Give Me Gourmand Cookie Crave": {
+        "brand": "lataffa",
+        "gender": "mujer",
+        "image": "Perfumes/Lataffa/LATTAFA GIVE ME GOURMAND COOKIE CRAVE MUJER 75 ML EDP.png",
+        "notes": {
+            "top": "Galleta, Vainilla, Almendra",
+            "heart": "Caramelo, Mantequilla, Crema",
+            "base": "Almizcle, Sándalo, Ámbar"
+        },
+        "seasons": {
+            "invierno": 78,
+            "primavera": 58,
+            "verano": 28,
+            "otono": 84
+        },
+        "times": {
+            "dia": 56,
+            "noche": 88
+        }
+    },
+    "Give Me Gourmand Mallow Madness": {
+        "brand": "lataffa",
+        "gender": "mujer",
+        "image": "Perfumes/Lataffa/LATTAFA GIVE ME GOURMAND MALLOW MADNESS MUJER 75 ML EDP.jpg",
+        "notes": {
+            "top": "Frambuesa, Marshmallow, Algodón de Azúcar",
+            "heart": "Vainilla, Caramelo, Nube de Azúcar",
+            "base": "Almizcle, Sándalo, Ámbar Dulce"
+        },
+        "seasons": {
+            "invierno": 68,
+            "primavera": 66,
+            "verano": 38,
+            "otono": 76
+        },
+        "times": {
+            "dia": 62,
+            "noche": 86
+        }
+    },
+    "Give Me Gourmand Vanilla Freak": {
+        "brand": "lataffa",
+        "gender": "mujer",
+        "image": "Perfumes/Lataffa/LATTAFA GIVE ME GOURMAND VANILLA FREAK MUJER 75 ML EDP.jpg",
+        "notes": {
+            "top": "Vainilla, Azúcar, Almendra",
+            "heart": "Vainilla Bourbon, Crema, Caramelo",
+            "base": "Almizcle, Sándalo, Ámbar Vainillado"
+        },
+        "seasons": {
+            "invierno": 82,
+            "primavera": 52,
+            "verano": 24,
+            "otono": 86
+        },
+        "times": {
+            "dia": 52,
+            "noche": 92
+        },
+        "badge": "nuevo"
+    },
+    "Give Me Gourmand Whipped Pleasure": {
+        "brand": "lataffa",
+        "gender": "mujer",
+        "image": "Perfumes/Lataffa/LATTAFA GIVE ME GOURMAND WHIPPED PLEASURE MUJER 75 ML EDP.png",
+        "notes": {
+            "top": "Crema Batida, Coco, Vainilla",
+            "heart": "Nata, Mantequilla, Almendra",
+            "base": "Almizcle, Sándalo, Ámbar Dulce"
+        },
+        "seasons": {
+            "invierno": 76,
+            "primavera": 58,
+            "verano": 28,
+            "otono": 84
+        },
+        "times": {
+            "dia": 56,
+            "noche": 88
+        }
+    },
+    "Habik": {
+        "brand": "lataffa",
+        "gender": "hombre",
+        "image": "Perfumes/Lataffa/LATTAFA HABIK HOMBRE 100 ML EDP.png",
+        "notes": {
+            "top": "Bergamota, Pomelo, Lima",
+            "heart": "Lavanda, Cedro, Geranio",
+            "base": "Vetiver, Almizcle, Ámbar"
+        },
+        "seasons": {
+            "invierno": 52,
+            "primavera": 82,
+            "verano": 68,
+            "otono": 68
+        },
+        "times": {
+            "dia": 76,
+            "noche": 62
+        }
+    },
+    "Habik Mujer": {
+        "brand": "lataffa",
+        "gender": "mujer",
+        "image": "Perfumes/Lataffa/LATTAFA HABIK MUJER 100 ML EDP.png",
+        "notes": {
+            "top": "Bergamota, Frutos Rojos, Pera",
+            "heart": "Rosa, Fresia, Geranio",
+            "base": "Almizcle, Vainilla, Sándalo"
+        },
+        "seasons": {
+            "invierno": 38,
+            "primavera": 88,
+            "verano": 68,
+            "otono": 62
+        },
+        "times": {
+            "dia": 80,
+            "noche": 66
+        }
+    },
+    "Hayaati": {
+        "brand": "lataffa",
+        "gender": "hombre",
+        "image": "Perfumes/Lataffa/LATTAFA HAYAATI HOMBRE 100 ML EDP.jpg",
+        "notes": {
+            "top": "Bergamota, Oud, Cardamomo",
+            "heart": "Rosa, Patchouli, Cuero",
+            "base": "Oud, Ámbar, Almizcle"
+        },
+        "seasons": {
+            "invierno": 86,
+            "primavera": 36,
+            "verano": 16,
+            "otono": 80
+        },
+        "times": {
+            "dia": 24,
+            "noche": 96
+        }
+    },
+    "Her Confession": {
+        "brand": "lataffa",
+        "gender": "mujer",
+        "image": "Perfumes/Lataffa/LATTAFA HER CONFESSION 100 ML EDP.jpeg",
+        "notes": {
+            "top": "Fresa, Bergamota, Pomelo",
+            "heart": "Rosa, Fresia, Magnolia",
+            "base": "Almizcle, Vainilla, Sándalo"
+        },
+        "seasons": {
+            "invierno": 32,
+            "primavera": 92,
+            "verano": 72,
+            "otono": 58
+        },
+        "times": {
+            "dia": 78,
+            "noche": 72
+        }
+    },
+    "His Confession": {
+        "brand": "lataffa",
+        "gender": "hombre",
+        "image": "Perfumes/Lataffa/LATTAFA HIS CONFESSION 100 ML EDP.png",
+        "notes": {
+            "top": "Bergamota, Lima, Cardamomo",
+            "heart": "Lavanda, Geranio, Cedro",
+            "base": "Vetiver, Almizcle, Ámbar"
+        },
+        "seasons": {
+            "invierno": 52,
+            "primavera": 82,
+            "verano": 68,
+            "otono": 68
+        },
+        "times": {
+            "dia": 76,
+            "noche": 62
+        }
+    },
+    "Khamrah": {
+        "brand": "lataffa",
+        "gender": "unisex",
+        "image": "Perfumes/Lataffa/LATTAFA KHAMRAH UNISEX 100 ML EDP.jpg",
+        "notes": {
+            "top": "Bergamota, Pimienta Negra, Manzana",
+            "heart": "Oud, Rosa, Caramelo",
+            "base": "Ámbar, Almizcle, Vainilla"
+        },
+        "seasons": {
+            "invierno": 86,
+            "primavera": 46,
+            "verano": 22,
+            "otono": 82
+        },
+        "times": {
+            "dia": 36,
+            "noche": 96
+        },
+        "badge": "mas-vendido"
+    },
+    "Khamrah Dukhan": {
+        "brand": "lataffa",
+        "gender": "unisex",
+        "image": "Perfumes/Lataffa/LATTAFA KHAMRAH DUKHAN UNISEX 100 ML EDP.jpeg",
+        "notes": {
+            "top": "Cuero, Oud Ahumado, Cardamomo",
+            "heart": "Rosa, Incienso, Patchouli",
+            "base": "Ámbar, Almizcle Oscuro, Vetiver"
+        },
+        "seasons": {
+            "invierno": 92,
+            "primavera": 26,
+            "verano": 12,
+            "otono": 80
+        },
+        "times": {
+            "dia": 16,
+            "noche": 98
+        }
+    },
+    "Khamrah Qahwa": {
+        "brand": "lataffa",
+        "gender": "unisex",
+        "image": "Perfumes/Lataffa/LATTAFA KHAMRAH QAHWA UNISEX 100 ML EDP.jpeg",
+        "notes": {
+            "top": "Café, Cardamomo, Bergamota",
+            "heart": "Oud, Rosa, Caramelo",
+            "base": "Ámbar, Vainilla, Almizcle"
+        },
+        "seasons": {
+            "invierno": 88,
+            "primavera": 42,
+            "verano": 18,
+            "otono": 82
+        },
+        "times": {
+            "dia": 32,
+            "noche": 96
+        }
+    },
+    "Khashabi": {
+        "brand": "lataffa",
+        "gender": "unisex",
+        "image": "Perfumes/Lataffa/LATTAFA KHASHABI UNISEX 100 ML EDP.jpeg",
+        "notes": {
+            "top": "Bergamota, Cilantro, Cedro",
+            "heart": "Oud, Cuero, Rosa",
+            "base": "Sándalo, Ámbar, Almizcle"
+        },
+        "seasons": {
+            "invierno": 82,
+            "primavera": 42,
+            "verano": 26,
+            "otono": 78
+        },
+        "times": {
+            "dia": 36,
+            "noche": 88
+        }
+    },
+    "Lail Maleki Morrocan Blue": {
+        "brand": "lataffa",
+        "gender": "unisex",
+        "image": "Perfumes/Lataffa/LATTAFA LAIL MALEKI MORROCAN BLUE UNISEX 100 ML EDP.jpeg",
+        "notes": {
+            "top": "Ciruelas Azules, Bergamota, Cardamomo",
+            "heart": "Rosa, Jazmín, Incienso",
+            "base": "Oud, Ámbar, Almizcle"
+        },
+        "seasons": {
+            "invierno": 88,
+            "primavera": 36,
+            "verano": 16,
+            "otono": 80
+        },
+        "times": {
+            "dia": 22,
+            "noche": 96
+        }
+    },
+    "Maahir Black Edition": {
+        "brand": "lataffa",
+        "gender": "hombre",
+        "image": "Perfumes/Lataffa/LATTAFA MAAHIR BLACK EDITION HOMBRE 100 ML EDP.webp",
+        "notes": {
+            "top": "Pimienta Negra, Oud, Cardamomo",
+            "heart": "Cuero, Rosa, Vetiver",
+            "base": "Almizcle, Ámbar Negro, Sándalo"
+        },
+        "seasons": {
+            "invierno": 90,
+            "primavera": 28,
+            "verano": 12,
+            "otono": 78
+        },
+        "times": {
+            "dia": 18,
+            "noche": 96
+        }
+    },
+    "Maahir Gold": {
+        "brand": "lataffa",
+        "gender": "hombre",
+        "image": "Perfumes/Lataffa/LATTAFA MAAHIR GOLD HOMBRE 100 ML EDP.jpg",
+        "notes": {
+            "top": "Bergamota, Mandarina, Limón",
+            "heart": "Rosa, Sándalo, Cedro",
+            "base": "Almizcle, Ámbar, Vetiver"
+        },
+        "seasons": {
+            "invierno": 58,
+            "primavera": 80,
+            "verano": 68,
+            "otono": 72
+        },
+        "times": {
+            "dia": 72,
+            "noche": 72
+        }
+    },
+    "Niche Emarati Classic Stone": {
+        "brand": "lataffa",
+        "gender": "unisex",
+        "image": "Perfumes/Lataffa/LATTAFA NICHE EMARATI CLASSIC STONE UNISEX 100 ML EDP.png",
+        "notes": {
+            "top": "Bergamota, Oud, Sándalo",
+            "heart": "Rosa, Incienso, Cuero",
+            "base": "Ámbar, Almizcle, Vetiver"
+        },
+        "seasons": {
+            "invierno": 82,
+            "primavera": 42,
+            "verano": 22,
+            "otono": 78
+        },
+        "times": {
+            "dia": 32,
+            "noche": 90
+        }
+    },
+    "Niche Emarati Khanjar": {
+        "brand": "lataffa",
+        "gender": "hombre",
+        "image": "Perfumes/Lataffa/LATTAFA NICHE EMARATI KHANJAR HOMBRE 80 ML EDP.jpg",
+        "notes": {
+            "top": "Azafrán, Oud, Bergamota",
+            "heart": "Rosa, Cuero, Incienso",
+            "base": "Ámbar, Almizcle, Sándalo"
+        },
+        "seasons": {
+            "invierno": 90,
+            "primavera": 28,
+            "verano": 12,
+            "otono": 80
+        },
+        "times": {
+            "dia": 18,
+            "noche": 96
+        }
+    },
+    "Petra": {
+        "brand": "lataffa",
+        "gender": "unisex",
+        "image": "Perfumes/Lataffa/LATTAFA PETRA UNISEX 100 ML EDP.jpeg",
+        "notes": {
+            "top": "Bergamota, Mandarina, Cardamomo",
+            "heart": "Rosa, Patchouli, Cedro",
+            "base": "Oud, Almizcle, Ámbar"
+        },
+        "seasons": {
+            "invierno": 82,
+            "primavera": 46,
+            "verano": 24,
+            "otono": 78
+        },
+        "times": {
+            "dia": 32,
+            "noche": 92
+        }
+    },
+    "Pride Art of Universe": {
+        "brand": "lataffa",
+        "gender": "unisex",
+        "image": "Perfumes/Lataffa/LATTAFA PRIDE ART OF UNIVERSE UNISEX 100 ML EDP.jpeg",
+        "notes": {
+            "top": "Bergamota, Limón, Mandarina",
+            "heart": "Oud, Rosa, Incienso",
+            "base": "Ámbar, Almizcle, Sándalo"
+        },
+        "seasons": {
+            "invierno": 86,
+            "primavera": 38,
+            "verano": 18,
+            "otono": 80
+        },
+        "times": {
+            "dia": 26,
+            "noche": 96
+        }
+    },
+    "Pride Pisa": {
+        "brand": "lataffa",
+        "gender": "hombre",
+        "image": "Perfumes/Lataffa/LATTAFA PRIDE PISA HOMBRE 100 ML EDP.jpeg",
+        "notes": {
+            "top": "Bergamota, Oud, Cardamomo",
+            "heart": "Cuero, Rosa, Jazmín",
+            "base": "Almizcle, Ámbar, Sándalo"
+        },
+        "seasons": {
+            "invierno": 86,
+            "primavera": 36,
+            "verano": 16,
+            "otono": 80
+        },
+        "times": {
+            "dia": 26,
+            "noche": 94
+        }
+    },
+    "Qimmah": {
+        "brand": "lataffa",
+        "gender": "hombre",
+        "image": "Perfumes/Lataffa/LATTAFA QIMMAH HOMBRE 100 ML EDP.jpg",
+        "notes": {
+            "top": "Bergamota, Pimienta, Cardamomo",
+            "heart": "Oud, Rosa, Cedro",
+            "base": "Almizcle, Ámbar, Vetiver"
+        },
+        "seasons": {
+            "invierno": 84,
+            "primavera": 38,
+            "verano": 18,
+            "otono": 80
+        },
+        "times": {
+            "dia": 28,
+            "noche": 94
+        }
+    },
+    "Teriaq Intense": {
+        "brand": "lataffa",
+        "gender": "unisex",
+        "image": "Perfumes/Lataffa/LATTAFA TERIAQ INTENSE UNISEX 100 ML EDP.png",
+        "notes": {
+            "top": "Bergamota, Pimienta Negra, Cardamomo",
+            "heart": "Oud, Cuero, Rosa",
+            "base": "Ámbar, Almizcle, Sándalo"
+        },
+        "seasons": {
+            "invierno": 88,
+            "primavera": 36,
+            "verano": 16,
+            "otono": 84
+        },
+        "times": {
+            "dia": 22,
+            "noche": 96
+        }
+    },
+    "Yara Candy": {
+        "brand": "lataffa",
+        "gender": "mujer",
+        "image": "Perfumes/Lataffa/LATTAFA YARA CANDY MUJER 100 ML EDP.jpeg",
+        "notes": {
+            "top": "Fresa, Frambuesa, Naranja",
+            "heart": "Rosa, Fresia, Peonía",
+            "base": "Almizcle, Vainilla, Sándalo"
+        },
+        "seasons": {
+            "invierno": 28,
+            "primavera": 92,
+            "verano": 78,
+            "otono": 52
+        },
+        "times": {
+            "dia": 82,
+            "noche": 70
+        }
+    },
+    "Yara Moi": {
+        "brand": "lataffa",
+        "gender": "mujer",
+        "image": "Perfumes/Lataffa/LATTAFA YARA MOI MUJER 100 ML EDP.webp",
+        "notes": {
+            "top": "Bergamota, Frutos Rojos, Pomelo",
+            "heart": "Rosa, Fresia, Violeta",
+            "base": "Almizcle, Vainilla, Sándalo"
+        },
+        "seasons": {
+            "invierno": 36,
+            "primavera": 90,
+            "verano": 76,
+            "otono": 58
+        },
+        "times": {
+            "dia": 80,
+            "noche": 72
+        }
+    },
+    "Yara Pink": {
+        "brand": "lataffa",
+        "gender": "mujer",
+        "image": "Perfumes/Lataffa/LATTAFA YARA PINK MUJER 100 ML EDP.webp",
+        "notes": {
+            "top": "Bergamota, Pera, Frambuesa",
+            "heart": "Rosa, Fresia, Magnolia",
+            "base": "Almizcle, Vainilla, Cedro"
+        },
+        "seasons": {
+            "invierno": 36,
+            "primavera": 92,
+            "verano": 74,
+            "otono": 58
+        },
+        "times": {
+            "dia": 80,
+            "noche": 70
+        }
+    },
+    "Yara Tous": {
+        "brand": "lataffa",
+        "gender": "mujer",
+        "image": "Perfumes/Lataffa/LATTAFA YARA TOUS MUJER 100 ML EDP.jpeg",
+        "notes": {
+            "top": "Bergamota, Naranja, Pomelo",
+            "heart": "Rosa, Jazmín, Fresia",
+            "base": "Almizcle, Vainilla, Sándalo"
+        },
+        "seasons": {
+            "invierno": 38,
+            "primavera": 88,
+            "verano": 78,
+            "otono": 58
+        },
+        "times": {
+            "dia": 80,
+            "noche": 68
+        }
+    },
+    "Hawas Éclat": {
+        "brand": "rasasi",
+        "gender": "hombre",
+        "image": "Perfumes/Rasasi/HAWAS-ECLAT.png",
+        "notes": {
+            "top": "Limón, Bergamota, Pomelo",
+            "heart": "Lavanda, Menta, Geranio",
+            "base": "Vetiver, Sándalo, Almizcle"
+        },
+        "seasons": {
+            "invierno": 26,
+            "primavera": 92,
+            "verano": 86,
+            "otono": 56
+        },
+        "times": {
+            "dia": 92,
+            "noche": 42
+        },
+        "badge": "nuevo"
+    }
 }
