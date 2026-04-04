@@ -48,35 +48,269 @@ addEventListener('scroll', () => {
     bTop.classList.toggle('show', scrollY > 450);
 });
 
-/* ── FILTER + SEARCH ───────────────────────────────────── */
-const tabs        = document.querySelectorAll('.tab-btn:not(.gender-btn)');
-const genderBtns  = document.querySelectorAll('.gender-btn');
-const cards       = document.querySelectorAll('.product-card');
-const searchInput = document.getElementById('searchInput');
-const searchClear = document.getElementById('searchClear');
-const noResults   = document.getElementById('noResults');
-let   activeFilter = 'all';
-let   activeGender = 'all';
+/* ── BRAND LABEL MAP ───────────────────────────────────── */
+const BRAND_LABELS = {
+    armaf:   'Armaf',
+    rasasi:  'Rasasi',
+    afnan:   'Afnan',
+    creed:   'Creed',
+    dior:    'Dior',
+    lataffa: 'Lataffa',
+};
 
+/* ── WHATSAPP ──────────────────────────────────────────── */
+const WA_NUM = '50687086834';
+const WA_SVG = `<svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.486 2 2 6.486 2 12c0 1.89.528 3.653 1.438 5.162L2.046 22l4.95-1.374A9.935 9.935 0 0012 22c5.514 0 10-4.486 10-10S17.514 2 12 2zm0 18a7.952 7.952 0 01-4.054-1.112l-.291-.173-3.018.839.843-3.019-.19-.308A7.954 7.954 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>`;
+
+/* ── FRAGRANCE MODAL META ──────────────────────────────── */
+const WHEN_META = [
+    { key: 'invierno', label: 'Invierno', icon: '❄️', color: '#6ab0f5', type: 'seasons' },
+    { key: 'primavera', label: 'Primavera', icon: '🌸', color: '#69f0ae', type: 'seasons' },
+    { key: 'verano',   label: 'Verano',   icon: '☀️', color: '#ff6e40', type: 'seasons' },
+    { key: 'otono',    label: 'Otoño',    icon: '🍂', color: '#ffab40', type: 'seasons' },
+    { key: 'dia',      label: 'Día',      icon: '🔆', color: '#ffd740', type: 'times'   },
+    { key: 'noche',    label: 'Noche',    icon: '🌙', color: '#7986cb', type: 'times'   },
+];
+
+const fragOverlay    = document.getElementById('fragOverlay');
+const fragModal      = document.getElementById('fragModal');
+const fragModalImg   = document.getElementById('fragModalImg');
+const fragModalBrand = document.getElementById('fragModalBrand');
+const fragModalName  = document.getElementById('fragModalName');
+const fragTopEl      = document.getElementById('fragTop');
+const fragHeartEl    = document.getElementById('fragHeart');
+const fragBaseEl     = document.getElementById('fragBase');
+const fragWhenGrid   = document.getElementById('fragWhenGrid');
+const searchInput    = document.getElementById('searchInput');
+const searchClear    = document.getElementById('searchClear');
+const noResults      = document.getElementById('noResults');
+
+let PERFUME_DATA = {};
+let allCards     = [];
+let activeFilter = 'all';
+let activeGender = 'all';
+let currentPage  = 1;
+const ITEMS_PER_PAGE = 15;
+
+/* ── BUILD CARD ELEMENT ────────────────────────────────── */
+function buildCard(name, p) {
+    const brandLabel = BRAND_LABELS[p.brand] || p.brand;
+    const msg = encodeURIComponent(`Hola! Me interesa el perfume *${name}* de *${brandLabel}*. ¿Me podés dar más información?`);
+
+    const badgeHTML = p.badge
+        ? `<span class="card-badge badge-${p.badge}">${p.badge === 'mas-vendido' ? '🔥 Más vendido' : '✨ Nuevo'}</span>`
+        : '';
+
+    const card = document.createElement('div');
+    card.className = 'product-card';
+    card.dataset.brand  = p.brand;
+    card.dataset.gender = p.gender;
+    card.innerHTML = `
+        <div class="card-shimmer"></div>
+        ${badgeHTML}
+        <div class="card-img-wrap">
+            <img src="${p.image}" alt="${name}" loading="lazy">
+        </div>
+        <div class="card-info">
+            <p class="card-brand">${brandLabel}</p>
+            <h3 class="card-name">${name}</h3>
+            <a class="card-wa" href="https://wa.me/${WA_NUM}?text=${msg}" target="_blank" rel="noopener noreferrer">
+                ${WA_SVG}Pedir por WhatsApp
+            </a>
+        </div>`;
+
+    card.addEventListener('click', e => {
+        if (!e.target.closest('.card-wa')) openFragModal(card, name, p);
+    });
+    return card;
+}
+
+/* ── BUILD NOVEDADES CAROUSEL ──────────────────────────── */
+function buildNovedades(data) {
+    const track = document.getElementById('novedadesTrack');
+    if (!track) return;
+
+    const nuevos = Object.entries(data).filter(([, p]) => p.badge === 'nuevo');
+    if (nuevos.length === 0) { track.closest('.novedades-wrap').style.display = 'none'; return; }
+
+    // Duplicate items for seamless infinite loop
+    const items = [...nuevos, ...nuevos];
+    track.innerHTML = items.map(([name, p]) => {
+        const brand = BRAND_LABELS[p.brand] || p.brand;
+        return `<a class="nov-chip" href="#coleccion" onclick="scrollToCard('${name.replace(/'/g,"\\'")}')">
+            <img src="${p.image}" alt="${name}" loading="lazy">
+            <div class="nov-chip-info">
+                <span class="nov-chip-brand">${brand}</span>
+                <span class="nov-chip-name">${name}</span>
+            </div>
+        </a>`;
+    }).join('');
+}
+
+function scrollToCard(name) {
+    // Find the card, activate its filter/page, then scroll to it
+    const card = [...allCards].find(c => c.querySelector('.card-name')?.textContent === name);
+    if (!card) return;
+    // Reset filters to show all
+    activeFilter = 'all';
+    activeGender = 'all';
+    document.querySelectorAll('.tab-btn:not(.gender-btn)').forEach(t => t.classList.toggle('active', t.dataset.filter === 'all'));
+    document.querySelectorAll('.gender-btn').forEach(b => b.classList.toggle('active', b.dataset.gender === 'all'));
+    searchInput.value = '';
+    applyAll();
+    // Go to the page that contains this card
+    const filtered = [...allCards].filter(c => !c.classList.contains('hidden'));
+    const idx = filtered.indexOf(card);
+    if (idx !== -1) {
+        currentPage = Math.ceil((idx + 1) / ITEMS_PER_PAGE);
+        renderPage();
+    }
+    setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 80);
+}
+
+/* ── QUIZ ──────────────────────────────────────────────── */
+const FAMILY_KEYWORDS = {
+    fresco:    ['bergamota', 'limón', 'limon', 'naranja', 'lima', 'mandarina', 'pomelo', 'cítrico', 'citrico', 'menta', 'brisa', 'acuático', 'acuatico', 'verde', 'pepino', 'té verde', 'violeta'],
+    floral:    ['rosa', 'jazmín', 'jazmin', 'iris', 'lavanda', 'loto', 'frangipani', 'lirio', 'magnolia', 'neroli', 'floral', 'peonía', 'peonia'],
+    amaderado: ['sándalo', 'sandalo', 'cedro', 'madera', 'oud', 'vetiver', 'patchouli', 'musgo', 'abedul', 'guayaco'],
+    oriental:  ['ámbar', 'ambar', 'canela', 'cardamomo', 'azafrán', 'azafran', 'tabaco', 'incienso', 'especias', 'resina', 'almizcle', 'ládano', 'benjuí'],
+    gourmand:  ['vainilla', 'caramelo', 'chocolate', 'café', 'cafe', 'coco', 'mango', 'durazno', 'fresa', 'miel', 'pralinée', 'praline', 'toffee', 'tiramisu', 'dulce'],
+};
+
+const quizAnswers = { family: null, time: null, gender: null };
+const quizSteps   = ['quizStep1', 'quizStep2', 'quizStep3', 'quizResults'];
+let   quizCurrent = 0;
+
+function quizScore(name, p, answers) {
+    // Gender filter
+    if (answers.gender === 'hombre' && p.gender !== 'hombre' && p.gender !== 'unisex') return -1;
+    if (answers.gender === 'mujer'  && p.gender !== 'mujer'  && p.gender !== 'unisex') return -1;
+    if (answers.gender === 'unisex' && p.gender !== 'unisex')                          return -1;
+
+    // Note family score
+    const notesStr = Object.values(p.notes).join(' ').toLowerCase();
+    const keywords = FAMILY_KEYWORDS[answers.family] || [];
+    let familyScore = 0;
+    keywords.forEach(kw => { if (notesStr.includes(kw)) familyScore++; });
+
+    // Time score (normalised to 0–100)
+    let timeScore = 0;
+    if (answers.time === 'dia')   timeScore = p.times.dia;
+    if (answers.time === 'noche') timeScore = p.times.noche;
+    if (answers.time === 'ambos') timeScore = (p.times.dia + p.times.noche) / 2;
+
+    return familyScore * 40 + timeScore;
+}
+
+function showQuizResults() {
+    const results = Object.entries(PERFUME_DATA)
+        .map(([name, p]) => ({ name, p, score: quizScore(name, p, quizAnswers) }))
+        .filter(x => x.score >= 0)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 6);
+
+    const grid = document.getElementById('quizResultsGrid');
+    grid.innerHTML = '';
+    if (results.length === 0) {
+        grid.innerHTML = '<p style="color:var(--muted);text-align:center;grid-column:1/-1">No encontramos coincidencias. Probá con otras opciones.</p>';
+    } else {
+        results.forEach(({ name, p }) => {
+            const card = buildCard(name, p);
+            card.classList.add('visible');
+            grid.appendChild(card);
+        });
+    }
+}
+
+function quizGoTo(stepIndex) {
+    quizSteps.forEach((id, i) => {
+        const el = document.getElementById(id);
+        if (el) el.classList.toggle('quiz-hidden', i !== stepIndex);
+    });
+    // Update progress dots
+    // dot2: active from Q2 onward; dot3: only at results (step 3)
+    document.getElementById('quizDot2')?.classList.toggle('active', stepIndex >= 1);
+    document.getElementById('quizDot3')?.classList.toggle('active', stepIndex >= 3);
+    // Fill lines: line1 from Q2 onward; line2 only at results
+    document.getElementById('quizFill1')?.classList.toggle('filled', stepIndex >= 1);
+    document.getElementById('quizFill2')?.classList.toggle('filled', stepIndex >= 3);
+    quizCurrent = stepIndex;
+}
+
+function initQuiz() {
+    // Handle option clicks
+    document.querySelectorAll('.quiz-opts').forEach(container => {
+        container.addEventListener('click', e => {
+            const btn = e.target.closest('.quiz-opt');
+            if (!btn) return;
+
+            // Visual feedback: select the clicked option
+            container.querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+
+            const value = btn.dataset.value;
+
+            // Short delay so user sees the selection before advancing
+            setTimeout(() => {
+                if (quizCurrent === 0) {
+                    quizAnswers.family = value;
+                    quizGoTo(1);
+                } else if (quizCurrent === 1) {
+                    quizAnswers.time = value;
+                    quizGoTo(2);
+                } else if (quizCurrent === 2) {
+                    quizAnswers.gender = value;
+                    showQuizResults();
+                    quizGoTo(3);
+                }
+            }, 280);
+        });
+    });
+
+    // Retry button
+    document.getElementById('quizRetry')?.addEventListener('click', () => {
+        quizAnswers.family = quizAnswers.time = quizAnswers.gender = null;
+        document.querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('selected'));
+        quizGoTo(0);
+        document.getElementById('quiz').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+}
+
+/* ── RENDER GRID FROM JSON ─────────────────────────────── */
+function buildGrid(data) {
+    PERFUME_DATA = data;
+    const grid = document.getElementById('grid');
+    grid.innerHTML = '';
+    allCards = [];
+    for (const [name, p] of Object.entries(data)) {
+        const card = buildCard(name, p);
+        grid.appendChild(card);
+        allCards.push(card);
+    }
+    buildNovedades(data);
+    initQuiz();
+    initTabs();
+    applyAll();
+}
+
+/* ── FILTER + SEARCH ───────────────────────────────────── */
 function applyAll() {
     const q = searchInput.value.trim().toLowerCase();
     searchClear.style.opacity       = q ? '1' : '0';
     searchClear.style.pointerEvents = q ? 'auto' : 'none';
 
     let visible = 0;
-    cards.forEach(c => {
-    const name   = c.querySelector('.card-name').textContent.toLowerCase();
-    const brand  = c.dataset.brand;
-    const gender = c.dataset.gender;
-    const matchB = activeFilter === 'all' || brand === activeFilter;
-    const matchG = activeGender === 'all' || gender === activeGender;
-    const matchQ = !q || name.includes(q);
-    if (matchB && matchG && matchQ) {
-        c.classList.remove('hidden');
-        visible++;
-    } else {
-        c.classList.add('hidden');
-    }
+    allCards.forEach(c => {
+        const name   = c.querySelector('.card-name').textContent.toLowerCase();
+        const matchB = activeFilter === 'all' || c.dataset.brand  === activeFilter;
+        const matchG = activeGender === 'all' || c.dataset.gender === activeGender;
+        const matchQ = !q || name.includes(q);
+        if (matchB && matchG && matchQ) {
+            c.classList.remove('hidden');
+            visible++;
+        } else {
+            c.classList.add('hidden');
+        }
     });
 
     noResults.style.display = visible === 0 ? 'block' : 'none';
@@ -84,26 +318,26 @@ function applyAll() {
     renderPage();
 }
 
-tabs.forEach(t => {
-    t.addEventListener('click', () => {
-    tabs.forEach(x => x.classList.remove('active'));
-    t.classList.add('active');
-    activeFilter = t.dataset.filter;
-    applyAll();
-    });
-});
+function initTabs() {
+    const tabs       = document.querySelectorAll('.tab-btn:not(.gender-btn)');
+    const genderBtns = document.querySelectorAll('.gender-btn');
 
-genderBtns.forEach(b => {
-    b.addEventListener('click', () => {
-    genderBtns.forEach(x => x.classList.remove('active'));
-    b.classList.add('active');
-    activeGender = b.dataset.gender;
-    applyAll();
-    });
-});
+    tabs.forEach(t => t.addEventListener('click', () => {
+        tabs.forEach(x => x.classList.remove('active'));
+        t.classList.add('active');
+        activeFilter = t.dataset.filter;
+        applyAll();
+    }));
+
+    genderBtns.forEach(b => b.addEventListener('click', () => {
+        genderBtns.forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        activeGender = b.dataset.gender;
+        applyAll();
+    }));
+}
 
 searchInput.addEventListener('input', applyAll);
-
 searchClear.addEventListener('click', () => {
     searchInput.value = '';
     searchInput.focus();
@@ -113,38 +347,35 @@ searchClear.addEventListener('click', () => {
 /* ── SCROLL REVEAL ─────────────────────────────────────── */
 const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-    if (e.isIntersecting) {
-        const col = [...e.target.parentElement.children]
-        .filter(c => !c.classList.contains('hidden'))
-        .indexOf(e.target);
-      setTimeout(() => e.target.classList.add('visible'), (col % 4) * 75);
-        io.unobserve(e.target);
-    }
+        if (e.isIntersecting) {
+            const col = [...e.target.parentElement.children]
+                .filter(c => !c.classList.contains('hidden'))
+                .indexOf(e.target);
+            setTimeout(() => e.target.classList.add('visible'), (col % 4) * 75);
+            io.unobserve(e.target);
+        }
     });
 }, { threshold: 0.08 });
 
 /* ── PAGINATION ────────────────────────────────────────── */
-const ITEMS_PER_PAGE = 10;
-let currentPage = 1;
-
 function getFiltered() {
-    return [...cards].filter(c => !c.classList.contains('hidden'));
+    return allCards.filter(c => !c.classList.contains('hidden'));
 }
 
 function renderPage() {
     const filtered = getFiltered();
     const totalPgs = Math.ceil(filtered.length / ITEMS_PER_PAGE);
-  const start    = (currentPage - 1) * ITEMS_PER_PAGE;
+    const start    = (currentPage - 1) * ITEMS_PER_PAGE;
     const end      = start + ITEMS_PER_PAGE;
 
     io.disconnect();
     filtered.forEach((c, i) => {
-    if (i >= start && i < end) {
-        c.classList.remove('paged-out');
-        if (!c.classList.contains('visible')) io.observe(c);
-    } else {
-        c.classList.add('paged-out');
-    }
+        if (i >= start && i < end) {
+            c.classList.remove('paged-out');
+            if (!c.classList.contains('visible')) io.observe(c);
+        } else {
+            c.classList.add('paged-out');
+        }
     });
 
     buildPagination(totalPgs);
@@ -157,14 +388,14 @@ function buildPagination(total) {
     const nums = pageNumbers(currentPage, total);
     let html = `<button class="pag-btn pag-arrow" onclick="goPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>&#8249;</button>`;
     nums.forEach(n => {
-    if (n === '…') {
-        html += `<span class="pag-ellipsis">…</span>`;
-    } else {
-        html += `<button class="pag-btn${n === currentPage ? ' active' : ''}" onclick="goPage(${n})">${n}</button>`;
-    }
+        if (n === '…') {
+            html += `<span class="pag-ellipsis">…</span>`;
+        } else {
+            html += `<button class="pag-btn${n === currentPage ? ' active' : ''}" onclick="goPage(${n})">${n}</button>`;
+        }
     });
     html += `<button class="pag-btn pag-arrow" onclick="goPage(${currentPage + 1})" ${currentPage === total ? 'disabled' : ''}>&#8250;</button>`;
-  pag.innerHTML = html;
+    pag.innerHTML = html;
 }
 
 function pageNumbers(cur, total) {
@@ -185,87 +416,36 @@ function goPage(page) {
     document.getElementById('coleccion').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-renderPage();
-
-/* ── WHATSAPP CARD BUTTONS ─────────────────────────────── */
-const WA_NUM = '50687086834';
-const WA_SVG = `<svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.486 2 2 6.486 2 12c0 1.89.528 3.653 1.438 5.162L2.046 22l4.95-1.374A9.935 9.935 0 0012 22c5.514 0 10-4.486 10-10S17.514 2 12 2zm0 18a7.952 7.952 0 01-4.054-1.112l-.291-.173-3.018.839.843-3.019-.19-.308A7.954 7.954 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>`;
-
-document.querySelectorAll('.product-card').forEach(card => {
-    const name  = card.querySelector('.card-name').textContent.trim();
-    const brand = card.querySelector('.card-brand').textContent.trim();
-    const msg   = encodeURIComponent(`Hola! Me interesa el perfume *${name}* de *${brand}*. ¿Me podés dar más información?`);
-    const btn   = document.createElement('a');
-    btn.className = 'card-wa';
-    btn.href      = `https://wa.me/${WA_NUM}?text=${msg}`;
-    btn.target    = '_blank';
-    btn.rel       = 'noopener noreferrer';
-    btn.innerHTML = WA_SVG + 'Pedir por WhatsApp';
-    card.querySelector('.card-info').appendChild(btn);
-    const arrow = card.querySelector('.card-arrow');
-    if (arrow) arrow.remove();
-});
-
 /* ── FRAGRANCE MODAL ───────────────────────────────────── */
-const WHEN_META = [
-    { key: 'invierno', label: 'Invierno', icon: '❄️', color: '#6ab0f5', type: 'seasons' },
-    { key: 'primavera', label: 'Primavera', icon: '🌸', color: '#69f0ae', type: 'seasons' },
-    { key: 'verano',   label: 'Verano',   icon: '☀️', color: '#ff6e40', type: 'seasons' },
-    { key: 'otono',    label: 'Otoño',    icon: '🍂', color: '#ffab40', type: 'seasons' },
-    { key: 'dia',      label: 'Día',      icon: '🔆', color: '#ffd740', type: 'times'   },
-    { key: 'noche',    label: 'Noche',    icon: '🌙', color: '#7986cb', type: 'times'   },
-];
-
-const fragOverlay    = document.getElementById('fragOverlay');
-const fragModal      = document.getElementById('fragModal');
-const fragModalImg   = document.getElementById('fragModalImg');
-const fragModalBrand = document.getElementById('fragModalBrand');
-const fragModalName  = document.getElementById('fragModalName');
-const fragTopEl      = document.getElementById('fragTop');
-const fragHeartEl    = document.getElementById('fragHeart');
-const fragBaseEl     = document.getElementById('fragBase');
-const fragWhenGrid   = document.getElementById('fragWhenGrid');
-
-let PERFUME_DATA = {};
-
-fetch('data/perfumes.json')
-    .then(r => r.json())
-    .then(data => { PERFUME_DATA = data; });
-
-function openFragModal(card) {
-    const name   = card.querySelector('.card-name').textContent.trim();
-    const brand  = card.querySelector('.card-brand').textContent.trim();
-    const imgSrc = card.querySelector('.card-img-wrap img').src;
-    const data   = PERFUME_DATA[name];
-
-    fragModalImg.src           = imgSrc;
+function openFragModal(card, name, p) {
+    fragModalImg.src           = p.image;
     fragModalImg.alt           = name;
-    fragModalBrand.textContent = brand;
+    fragModalBrand.textContent = BRAND_LABELS[p.brand] || p.brand;
     fragModalName.textContent  = name;
 
-    if (data) {
-    fragTopEl.textContent   = data.notes.top;
-    fragHeartEl.textContent = data.notes.heart;
-    fragBaseEl.textContent  = data.notes.base;
-    fragWhenGrid.innerHTML  = WHEN_META.map(m => {
-        const val = data[m.type][m.key];
-        return `<div class="when-item">
-        <span class="when-icon">${m.icon}</span>
-        <span class="when-label">${m.label}</span>
-        <div class="when-bar-wrap"><div class="when-bar" data-w="${val}" style="background:${m.color}"></div></div>
-        <span class="when-val">${val}</span>
-        </div>`;
-    }).join('');
+    if (p.notes) {
+        fragTopEl.textContent   = p.notes.top;
+        fragHeartEl.textContent = p.notes.heart;
+        fragBaseEl.textContent  = p.notes.base;
+        fragWhenGrid.innerHTML  = WHEN_META.map(m => {
+            const val = p[m.type][m.key];
+            return `<div class="when-item">
+                <span class="when-icon">${m.icon}</span>
+                <span class="when-label">${m.label}</span>
+                <div class="when-bar-wrap"><div class="when-bar" data-w="${val}" style="background:${m.color}"></div></div>
+                <span class="when-val">${val}</span>
+            </div>`;
+        }).join('');
     } else {
-    fragTopEl.textContent = fragHeartEl.textContent = fragBaseEl.textContent = 'Información no disponible';
-    fragWhenGrid.innerHTML = '';
+        fragTopEl.textContent = fragHeartEl.textContent = fragBaseEl.textContent = 'Información no disponible';
+        fragWhenGrid.innerHTML = '';
     }
 
     fragOverlay.classList.add('open');
     document.body.style.overflow = 'hidden';
     fragModal.scrollTop = 0;
     requestAnimationFrame(() => requestAnimationFrame(() => {
-    fragWhenGrid.querySelectorAll('.when-bar').forEach(b => { b.style.width = b.dataset.w + '%'; });
+        fragWhenGrid.querySelectorAll('.when-bar').forEach(b => { b.style.width = b.dataset.w + '%'; });
     }));
 }
 
@@ -273,7 +453,7 @@ function closeFragModal() {
     fragOverlay.classList.remove('open');
     document.body.style.overflow = '';
     setTimeout(() => {
-    fragWhenGrid.querySelectorAll('.when-bar').forEach(b => { b.style.width = '0'; });
+        fragWhenGrid.querySelectorAll('.when-bar').forEach(b => { b.style.width = '0'; });
     }, 360);
 }
 
@@ -281,6 +461,24 @@ document.getElementById('fragClose').addEventListener('click', closeFragModal);
 fragOverlay.addEventListener('click', e => { if (e.target === fragOverlay) closeFragModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && fragOverlay.classList.contains('open')) closeFragModal(); });
 
-document.querySelectorAll('.product-card').forEach(card => {
-    card.addEventListener('click', e => { if (!e.target.closest('.card-wa')) openFragModal(card); });
-});
+/* ── INIT: fetch JSON → build everything ───────────────── */
+fetch('data/perfumes.json')
+    .then(r => r.json())
+    .then(buildGrid);
+
+function closeFragModal() {
+    fragOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+        fragWhenGrid.querySelectorAll('.when-bar').forEach(b => { b.style.width = '0'; });
+    }, 360);
+}
+
+document.getElementById('fragClose').addEventListener('click', closeFragModal);
+fragOverlay.addEventListener('click', e => { if (e.target === fragOverlay) closeFragModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && fragOverlay.classList.contains('open')) closeFragModal(); });
+
+/* ── INIT: fetch JSON → build everything ───────────────── */
+fetch('data/perfumes.json')
+    .then(r => r.json())
+    .then(buildGrid);

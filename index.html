@@ -3,7 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ChifriScents · Colección Exclusiva</title>
+  <title>ChifriScents · Colección Exclusiva de Perfumes</title>
+
+  <!-- Open Graph / WhatsApp / Facebook -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="ChifriScents">
+  <meta property="og:url"         content="https://chifriscents.vercel.app">
+  <meta property="og:title"       content="ChifriScents · Colección Exclusiva de Perfumes">
+  <meta property="og:description" content="Descubre nuestra selección exclusiva de perfumes de lujo. Armaf, Creed, Dior, Rasasi, Lataffa, Afnan y más. Pedí por WhatsApp.">
+  <meta property="og:image"       content="https://chifriscents.vercel.app/Perfumes/Armaf/club the nuit intense man.png">
+  <meta property="og:image:width"  content="500">
+  <meta property="og:image:height" content="500">
+  <meta property="og:locale"      content="es_CR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="ChifriScents · Colección Exclusiva de Perfumes">
+  <meta name="twitter:description" content="Descubre nuestra selección exclusiva de perfumes de lujo. Pedí por WhatsApp.">
+  <meta name="twitter:image"       content="https://chifriscents.vercel.app/Perfumes/Armaf/club the nuit intense man.png">
+
+  <!-- SEO general -->
+  <meta name="description" content="Colección exclusiva de perfumes de lujo: Armaf, Creed, Dior, Rasasi, Lataffa y Afnan. Encontrá tu fragancia ideal y pedí por WhatsApp.">
+  <meta name="keywords"    content="perfumes, fragancias, lujo, Armaf, Creed, Dior, Rasasi, Lataffa, Afnan, Club de Nuit, Sauvage, Aventus">
+  <link rel="canonical"    href="https://chifriscents.vercel.app">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -23,6 +46,8 @@
     <a href="#" class="logo">Chifri<span>·</span>Scents</a>
     <nav>
       <a href="#inicio">Inicio</a>
+      <a href="#guia">Guía</a>
+      <a href="#quiz">Quiz</a>
       <a href="#coleccion">Colección</a>
       <a href="#marcas">Fragancias</a>
     </nav>
@@ -43,6 +68,15 @@
         <polyline points="12 5 19 12 12 19"/>
       </svg>
     </a>
+
+    <!-- Novedades carousel -->
+    <div class="novedades-wrap">
+      <p class="novedades-label"> Novedades</p>
+      <div class="novedades-track-outer">
+        <div class="novedades-track" id="novedadesTrack"></div>
+      </div>
+    </div>
+
     <div class="hero-line"></div>
   </section>
 
@@ -86,6 +120,165 @@
     </div>
   </div>
 
+  <!-- ¿Cómo elegir tu perfume? -->
+  <section class="section guia-section" id="guia">
+    <div class="section-header">
+      <span class="section-tag">Tu fragancia ideal</span>
+      <h2 class="section-title">¿Cómo elegir tu perfume?</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="guia-steps">
+
+      <div class="guia-step">
+        <div class="guia-step-num">01</div>
+        <div class="guia-step-icon">🌿</div>
+        <h3 class="guia-step-title">¿Qué notas te atraen?</h3>
+        <p class="guia-step-desc">Las fragancias se dividen en familias olfativas. Las <strong>amaderadas</strong> proyectan elegancia y calidez. Las <strong>frescas y cítricas</strong> son ligeras y energéticas. Las <strong>orientales y especiadas</strong> son intensas y seductoras. Las <strong>florales</strong> son románticas y femeninas.</p>
+        <div class="guia-tags">
+          <span>🌲 Amaderado</span>
+          <span>🍋 Cítrico</span>
+          <span>🌶️ Oriental</span>
+          <span>🌸 Floral</span>
+          <span>🍬 Gourmand</span>
+        </div>
+      </div>
+
+      <div class="guia-step">
+        <div class="guia-step-num">02</div>
+        <div class="guia-step-icon">🕐</div>
+        <h3 class="guia-step-title">¿Para qué ocasión?</h3>
+        <p class="guia-step-desc">Los perfumes varían según la ocasión. Para el <strong>trabajo o el día a día</strong> buscá algo fresco y discr eto. Para una <strong>cita o noche especial</strong> opta por algo más intenso y sensual. Para el <strong>deporte o verano</strong>, algo ligero y acuático.</p>
+        <div class="guia-tags">
+          <span>☀️ Día</span>
+          <span>🌙 Noche</span>
+          <span>💼 Trabajo</span>
+          <span>🎉 Fiesta</span>
+          <span>🏖️ Verano</span>
+        </div>
+      </div>
+
+      <div class="guia-step">
+        <div class="guia-step-num">03</div>
+        <div class="guia-step-icon">💬</div>
+        <h3 class="guia-step-title">¡Consultános!</h3>
+        <p class="guia-step-desc">No sabés por dónde empezar o querés un perfume similar a uno de lujo? Escribinos por WhatsApp y te ayudamos a encontrar <strong>tu fragancia perfecta</strong> según tu personalidad y presupuesto.</p>
+        <a class="guia-wa-btn" href="https://wa.me/50687086834?text=Hola!%20Me%20gustar%C3%ADa%20que%20me%20ayuden%20a%20elegir%20un%20perfume." target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.486 2 2 6.486 2 12c0 1.89.528 3.653 1.438 5.162L2.046 22l4.95-1.374A9.935 9.935 0 0012 22c5.514 0 10-4.486 10-10S17.514 2 12 2zm0 18a7.952 7.952 0 01-4.054-1.112l-.291-.173-3.018.839.843-3.019-.19-.308A7.954 7.954 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+          Pedir asesoría gratis
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Quiz de fragancias -->
+  <section class="section quiz-section" id="quiz">
+    <div class="section-header">
+      <span class="section-tag">Encontrá tu fragancia ideal</span>
+      <h2 class="section-title">Quiz de Fragancias</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="quiz-container">
+
+      <!-- Progress dots -->
+      <div class="quiz-progress">
+        <div class="quiz-dot active"></div>
+        <div class="quiz-progress-line"><div class="quiz-progress-fill" id="quizFill1"></div></div>
+        <div class="quiz-dot" id="quizDot2"></div>
+        <div class="quiz-progress-line"><div class="quiz-progress-fill" id="quizFill2"></div></div>
+        <div class="quiz-dot" id="quizDot3"></div>
+      </div>
+
+      <!-- Step 1: Familia olfativa -->
+      <div class="quiz-step" id="quizStep1">
+        <h3 class="quiz-question">¿Qué tipo de aroma te atrae más?</h3>
+        <div class="quiz-opts quiz-opts--5">
+          <button class="quiz-opt" data-value="fresco">
+            <span class="quiz-opt-icon">🌿</span>
+            <span class="quiz-opt-label">Fresco & Natural</span>
+            <span class="quiz-opt-desc">Cítrico, verde, acuático</span>
+          </button>
+          <button class="quiz-opt" data-value="floral">
+            <span class="quiz-opt-icon">🌹</span>
+            <span class="quiz-opt-label">Floral</span>
+            <span class="quiz-opt-desc">Rosa, jazmín, lavanda</span>
+          </button>
+          <button class="quiz-opt" data-value="amaderado">
+            <span class="quiz-opt-icon">🪵</span>
+            <span class="quiz-opt-label">Amaderado</span>
+            <span class="quiz-opt-desc">Cedro, sándalo, oud</span>
+          </button>
+          <button class="quiz-opt" data-value="oriental">
+            <span class="quiz-opt-icon">🌶️</span>
+            <span class="quiz-opt-label">Oriental & Especiado</span>
+            <span class="quiz-opt-desc">Ámbar, canela, especias</span>
+          </button>
+          <button class="quiz-opt" data-value="gourmand">
+            <span class="quiz-opt-icon">🍫</span>
+            <span class="quiz-opt-label">Dulce & Gourmand</span>
+            <span class="quiz-opt-desc">Vainilla, caramelo, coco</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: Momento del día -->
+      <div class="quiz-step quiz-hidden" id="quizStep2">
+        <h3 class="quiz-question">¿Para qué momento del día?</h3>
+        <div class="quiz-opts quiz-opts--3">
+          <button class="quiz-opt" data-value="dia">
+            <span class="quiz-opt-icon">☀️</span>
+            <span class="quiz-opt-label">De día</span>
+            <span class="quiz-opt-desc">Trabajo, salidas, deporte</span>
+          </button>
+          <button class="quiz-opt" data-value="noche">
+            <span class="quiz-opt-icon">🌙</span>
+            <span class="quiz-opt-label">De noche</span>
+            <span class="quiz-opt-desc">Cenas, fiestas, citas</span>
+          </button>
+          <button class="quiz-opt" data-value="ambos">
+            <span class="quiz-opt-icon">✨</span>
+            <span class="quiz-opt-label">Cualquier momento</span>
+            <span class="quiz-opt-desc">Versátil, todo el día</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3: Género -->
+      <div class="quiz-step quiz-hidden" id="quizStep3">
+        <h3 class="quiz-question">¿Para quién es?</h3>
+        <div class="quiz-opts quiz-opts--3">
+          <button class="quiz-opt" data-value="hombre">
+            <span class="quiz-opt-icon">♂️</span>
+            <span class="quiz-opt-label">Para él</span>
+            <span class="quiz-opt-desc">Fragancias masculinas</span>
+          </button>
+          <button class="quiz-opt" data-value="mujer">
+            <span class="quiz-opt-icon">♀️</span>
+            <span class="quiz-opt-label">Para ella</span>
+            <span class="quiz-opt-desc">Fragancias femeninas</span>
+          </button>
+          <button class="quiz-opt" data-value="unisex">
+            <span class="quiz-opt-icon">⚥</span>
+            <span class="quiz-opt-label">Unisex</span>
+            <span class="quiz-opt-desc">Para cualquiera</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Resultados -->
+      <div class="quiz-step quiz-hidden" id="quizResults">
+        <div class="quiz-results-header">
+          <p class="quiz-results-label">✦ Encontramos estas fragancias para vos</p>
+        </div>
+        <div class="quiz-results-grid" id="quizResultsGrid"></div>
+        <button class="quiz-retry" id="quizRetry">↩ Hacer el quiz de nuevo</button>
+      </div>
+
+    </div>
+  </section>
+
   <!-- Collection -->
   <section class="section" id="coleccion">
     <div class="section-header">
@@ -96,7 +289,11 @@
 
     <div class="filter-tabs" id="marcas">
       <button class="tab-btn active" data-filter="all">Todas</button>
+      <button class="tab-btn" data-filter="afnan">Afnan</button>
       <button class="tab-btn" data-filter="armaf">Armaf</button>
+      <button class="tab-btn" data-filter="creed">Creed</button>
+      <button class="tab-btn" data-filter="dior">Dior</button>
+      <button class="tab-btn" data-filter="lataffa">Lataffa</button>
       <button class="tab-btn" data-filter="rasasi">Rasasi</button>
     </div>
 
@@ -119,289 +316,7 @@
 
     <p class="no-results" id="noResults">No se encontraron fragancias.</p>
 
-    <div class="products-grid" id="grid">
-
-      <!-- Armaf -->
-
-      <div class="product-card" data-brand="armaf" data-gender="unisex">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/Armaf%20island%20bliss.png" alt="Island Bliss" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Island Bliss</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="armaf" data-gender="unisex">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/Armaf%20odyssey%20mandarin%20sky.png" alt="Odyssey Mandarin Sky" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Odyssey Mandarin Sky</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="armaf" data-gender="hombre">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/club%20the%20nuit%20intense%20man.png" alt="Club de Nuit Intense Man" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Club de Nuit Intense Man</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="armaf" data-gender="mujer">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/CLUB-DE-NUIT%20mujer.png" alt="Club de Nuit Femme" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Club de Nuit Femme</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="armaf" data-gender="unisex">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/Club-de-Nuit-Urban-Elixir.png" alt="Club de Nuit Urban Elixir" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Club de Nuit Urban Elixir</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="armaf" data-gender="hombre">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/mandarinn%20sky%20elixir.png" alt="Mandarin Sky Elixir" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Mandarin Sky Elixir</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="armaf" data-gender="hombre">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/oddysey%20homme%20.png" alt="Odyssey Homme" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Odyssey Homme</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="armaf" data-gender="hombre">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/odyssey-artisto.png" alt="Odyssey Artisto" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Odyssey Artisto</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="armaf" data-gender="unisex">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/ODYSSEY-BA-HA-MAS-UNSIEX-100ML-EDP-ARMAF.jpg" alt="Odyssey Bahamas" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Odyssey Bahamas</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="armaf" data-gender="unisex">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/ODYSSEY-SPECTRA-UNISEX-100ML-EDP-ARMAF%20Blue%20edition.png" alt="Odyssey Spectra Blue" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Odyssey Spectra Blue</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="armaf" data-gender="unisex">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/ODYSSEY-SPECTRA-UNISEX-100ML-EDP-ARMAF.png" alt="Odyssey Spectra" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Odyssey Spectra</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="armaf" data-gender="unisex">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Armaf/ODYSSEY-WHITE.jpg" alt="Odyssey White" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Armaf</p>
-          <h3 class="card-name">Odyssey White</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <!-- Rasasi -->
-
-      <div class="product-card" data-brand="rasasi" data-gender="hombre">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Rasasi/hawas%20cobra.png" alt="Hawas Cobra" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Rasasi</p>
-          <h3 class="card-name">Hawas Cobra</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="rasasi" data-gender="mujer">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Rasasi/hawas%20pink.png" alt="Hawas Pink" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Rasasi</p>
-          <h3 class="card-name">Hawas Pink</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="rasasi" data-gender="hombre">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Rasasi/Hawas-Atlantis.webp" alt="Hawas Atlantis" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Rasasi</p>
-          <h3 class="card-name">Hawas Atlantis</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="rasasi" data-gender="hombre">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Rasasi/Hawas-Black.png" alt="Hawas Black" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Rasasi</p>
-          <h3 class="card-name">Hawas Black</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="rasasi" data-gender="mujer">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Rasasi/Hawas-Diva.png" alt="Hawas Diva" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Rasasi</p>
-          <h3 class="card-name">Hawas Diva</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="rasasi" data-gender="hombre">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Rasasi/HAWAS-ECLAT.png" alt="Hawas Éclat" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Rasasi</p>
-          <h3 class="card-name">Hawas &Eacute;clat</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="rasasi" data-gender="hombre">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Rasasi/hawas-elixir.png" alt="Hawas Elixir" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Rasasi</p>
-          <h3 class="card-name">Hawas Elixir</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="rasasi" data-gender="hombre">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Rasasi/hawas-fire.png" alt="Hawas Fire" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Rasasi</p>
-          <h3 class="card-name">Hawas Fire</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="rasasi" data-gender="hombre">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Rasasi/HAWAS-LONDON.png" alt="Hawas London" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Rasasi</p>
-          <h3 class="card-name">Hawas London</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="rasasi" data-gender="unisex">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Rasasi/hawas-tropical.jpg" alt="Hawas Tropical" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Rasasi</p>
-          <h3 class="card-name">Hawas Tropical</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-      <div class="product-card" data-brand="rasasi" data-gender="unisex">
-        <div class="card-shimmer"></div>
-        <div class="card-img-wrap">
-          <img src="Perfumes/Rasasi/malibu.jpg" alt="Malibu" loading="lazy">
-        </div>
-        <div class="card-info">
-          <p class="card-brand">Rasasi</p>
-          <h3 class="card-name">Malibu</h3>
-          <div class="card-arrow">&#8594;</div>
-        </div>
-      </div>
-
-    </div>
+    <div class="products-grid" id="grid"></div>
 
     <!-- Pagination -->
     <div class="pagination" id="pagination"></div>
