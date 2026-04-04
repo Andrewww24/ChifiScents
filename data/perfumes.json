@@ -398,7 +398,8 @@
         "times": {
             "dia": 66,
             "noche": 82
-        }
+        },
+        "badge": "nuevo"
     },
     "Hawas Tropical": {
         "brand": "rasasi",
@@ -542,6 +543,27 @@
         },
         "badge": "mas-vendido"
     },
+    "9pm Night Out": {
+        "brand": "afnan",
+        "gender": "hombre",
+        "image": "Perfumes\\Afnan\\AFNAN 9PM NIGHT OUT HOMBRE 100 ML EDP.jpg.jpg",
+        "notes": {
+            "top": "Bergamota, Pimienta, Cardamomo",
+            "heart": "Oud, Rosa, Cedro",
+            "base": "Almizcle, Ámbar, Vetiver"
+        },
+        "seasons": {
+            "invierno": 84,
+            "primavera": 38,
+            "verano": 18,
+            "otono": 80
+        },
+        "times": {
+            "dia": 28,
+            "noche": 94
+        },
+        "badge": "nuevo"
+    },
     "9pm Femme": {
         "brand": "afnan",
         "gender": "mujer",
@@ -580,7 +602,8 @@
         "times": {
             "dia": 22,
             "noche": 96
-        }
+        }, 
+        "badge": "nuevo"
     },
     "9am": {
         "brand": "afnan",
@@ -1320,7 +1343,8 @@
         "times": {
             "dia": 86,
             "noche": 46
-        }
+        },
+        "badge": "nuevo"
     },
     "Odyssey Go Mango": {
         "brand": "armaf",
@@ -2750,26 +2774,6 @@
             "dia": 80,
             "noche": 68
         }
-    },
-    "Hawas Éclat": {
-        "brand": "rasasi",
-        "gender": "hombre",
-        "image": "Perfumes/Rasasi/HAWAS-ECLAT.png",
-        "notes": {
-            "top": "Limón, Bergamota, Pomelo",
-            "heart": "Lavanda, Menta, Geranio",
-            "base": "Vetiver, Sándalo, Almizcle"
-        },
-        "seasons": {
-            "invierno": 26,
-            "primavera": 92,
-            "verano": 86,
-            "otono": 56
-        },
-        "times": {
-            "dia": 92,
-            "noche": 42
-        },
-        "badge": "nuevo"
     }
+
 }

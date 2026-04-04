@@ -125,6 +125,157 @@ function buildCard(name, p) {
     return card;
 }
 
+/* ── BUILD NOVEDADES CAROUSEL ──────────────────────────── */
+function buildNovedades(data) {
+    const track = document.getElementById('novedadesTrack');
+    if (!track) return;
+
+    const nuevos = Object.entries(data).filter(([, p]) => p.badge === 'nuevo');
+    if (nuevos.length === 0) { track.closest('.novedades-wrap').style.display = 'none'; return; }
+
+    // Duplicate items for seamless infinite loop
+    const items = [...nuevos, ...nuevos];
+    track.innerHTML = items.map(([name, p]) => {
+        const brand = BRAND_LABELS[p.brand] || p.brand;
+        return `<a class="nov-chip" href="#coleccion" onclick="scrollToCard('${name.replace(/'/g,"\\'")}')">
+            <img src="${p.image}" alt="${name}" loading="lazy">
+            <div class="nov-chip-info">
+                <span class="nov-chip-brand">${brand}</span>
+                <span class="nov-chip-name">${name}</span>
+            </div>
+        </a>`;
+    }).join('');
+}
+
+function scrollToCard(name) {
+    // Find the card, activate its filter/page, then scroll to it
+    const card = [...allCards].find(c => c.querySelector('.card-name')?.textContent === name);
+    if (!card) return;
+    // Reset filters to show all
+    activeFilter = 'all';
+    activeGender = 'all';
+    document.querySelectorAll('.tab-btn:not(.gender-btn)').forEach(t => t.classList.toggle('active', t.dataset.filter === 'all'));
+    document.querySelectorAll('.gender-btn').forEach(b => b.classList.toggle('active', b.dataset.gender === 'all'));
+    searchInput.value = '';
+    applyAll();
+    // Go to the page that contains this card
+    const filtered = [...allCards].filter(c => !c.classList.contains('hidden'));
+    const idx = filtered.indexOf(card);
+    if (idx !== -1) {
+        currentPage = Math.ceil((idx + 1) / ITEMS_PER_PAGE);
+        renderPage();
+    }
+    setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 80);
+}
+
+/* ── QUIZ ──────────────────────────────────────────────── */
+const FAMILY_KEYWORDS = {
+    fresco:    ['bergamota', 'limón', 'limon', 'naranja', 'lima', 'mandarina', 'pomelo', 'cítrico', 'citrico', 'menta', 'brisa', 'acuático', 'acuatico', 'verde', 'pepino', 'té verde', 'violeta'],
+    floral:    ['rosa', 'jazmín', 'jazmin', 'iris', 'lavanda', 'loto', 'frangipani', 'lirio', 'magnolia', 'neroli', 'floral', 'peonía', 'peonia'],
+    amaderado: ['sándalo', 'sandalo', 'cedro', 'madera', 'oud', 'vetiver', 'patchouli', 'musgo', 'abedul', 'guayaco'],
+    oriental:  ['ámbar', 'ambar', 'canela', 'cardamomo', 'azafrán', 'azafran', 'tabaco', 'incienso', 'especias', 'resina', 'almizcle', 'ládano', 'benjuí'],
+    gourmand:  ['vainilla', 'caramelo', 'chocolate', 'café', 'cafe', 'coco', 'mango', 'durazno', 'fresa', 'miel', 'pralinée', 'praline', 'toffee', 'tiramisu', 'dulce'],
+};
+
+const quizAnswers = { family: null, time: null, gender: null };
+const quizSteps   = ['quizStep1', 'quizStep2', 'quizStep3', 'quizResults'];
+let   quizCurrent = 0;
+
+function quizScore(name, p, answers) {
+    // Gender filter
+    if (answers.gender === 'hombre' && p.gender !== 'hombre' && p.gender !== 'unisex') return -1;
+    if (answers.gender === 'mujer'  && p.gender !== 'mujer'  && p.gender !== 'unisex') return -1;
+    if (answers.gender === 'unisex' && p.gender !== 'unisex')                          return -1;
+
+    // Note family score
+    const notesStr = Object.values(p.notes).join(' ').toLowerCase();
+    const keywords = FAMILY_KEYWORDS[answers.family] || [];
+    let familyScore = 0;
+    keywords.forEach(kw => { if (notesStr.includes(kw)) familyScore++; });
+
+    // Time score (normalised to 0–100)
+    let timeScore = 0;
+    if (answers.time === 'dia')   timeScore = p.times.dia;
+    if (answers.time === 'noche') timeScore = p.times.noche;
+    if (answers.time === 'ambos') timeScore = (p.times.dia + p.times.noche) / 2;
+
+    return familyScore * 40 + timeScore;
+}
+
+function showQuizResults() {
+    const results = Object.entries(PERFUME_DATA)
+        .map(([name, p]) => ({ name, p, score: quizScore(name, p, quizAnswers) }))
+        .filter(x => x.score >= 0)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 6);
+
+    const grid = document.getElementById('quizResultsGrid');
+    grid.innerHTML = '';
+    if (results.length === 0) {
+        grid.innerHTML = '<p style="color:var(--muted);text-align:center;grid-column:1/-1">No encontramos coincidencias. Probá con otras opciones.</p>';
+    } else {
+        results.forEach(({ name, p }) => {
+            const card = buildCard(name, p);
+            card.classList.add('visible');
+            grid.appendChild(card);
+        });
+    }
+}
+
+function quizGoTo(stepIndex) {
+    quizSteps.forEach((id, i) => {
+        const el = document.getElementById(id);
+        if (el) el.classList.toggle('quiz-hidden', i !== stepIndex);
+    });
+    // Update progress dots
+    // dot2: active from Q2 onward; dot3: only at results (step 3)
+    document.getElementById('quizDot2')?.classList.toggle('active', stepIndex >= 1);
+    document.getElementById('quizDot3')?.classList.toggle('active', stepIndex >= 3);
+    // Fill lines: line1 from Q2 onward; line2 only at results
+    document.getElementById('quizFill1')?.classList.toggle('filled', stepIndex >= 1);
+    document.getElementById('quizFill2')?.classList.toggle('filled', stepIndex >= 3);
+    quizCurrent = stepIndex;
+}
+
+function initQuiz() {
+    // Handle option clicks
+    document.querySelectorAll('.quiz-opts').forEach(container => {
+        container.addEventListener('click', e => {
+            const btn = e.target.closest('.quiz-opt');
+            if (!btn) return;
+
+            // Visual feedback: select the clicked option
+            container.querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+
+            const value = btn.dataset.value;
+
+            // Short delay so user sees the selection before advancing
+            setTimeout(() => {
+                if (quizCurrent === 0) {
+                    quizAnswers.family = value;
+                    quizGoTo(1);
+                } else if (quizCurrent === 1) {
+                    quizAnswers.time = value;
+                    quizGoTo(2);
+                } else if (quizCurrent === 2) {
+                    quizAnswers.gender = value;
+                    showQuizResults();
+                    quizGoTo(3);
+                }
+            }, 280);
+        });
+    });
+
+    // Retry button
+    document.getElementById('quizRetry')?.addEventListener('click', () => {
+        quizAnswers.family = quizAnswers.time = quizAnswers.gender = null;
+        document.querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('selected'));
+        quizGoTo(0);
+        document.getElementById('quiz').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+}
+
 /* ── RENDER GRID FROM JSON ─────────────────────────────── */
 function buildGrid(data) {
     PERFUME_DATA = data;
@@ -136,6 +287,8 @@ function buildGrid(data) {
         grid.appendChild(card);
         allCards.push(card);
     }
+    buildNovedades(data);
+    initQuiz();
     initTabs();
     applyAll();
 }
