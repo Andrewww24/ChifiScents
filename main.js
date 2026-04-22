@@ -23,7 +23,7 @@
 
     function tick() {
     ctx.clearRect(0, 0, W, H);
-    ctx.fillStyle = '#00e676';
+    ctx.fillStyle = '#EC4899';
     pts.forEach(p => {
         p.x += p.vx; p.y += p.vy;
       p.a += p.da * p.aDir;
